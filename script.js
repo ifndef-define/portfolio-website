@@ -1,3 +1,5 @@
+console.log("%cWelcome fellow developer. Green means good, so all is good right?", "color: #1eff00; font-size: 16px; font-weight: bold; font-family: Cascadia Code;")
+
 const starCount = 300;
 
 for (let i = 0; i < starCount; i++) {
