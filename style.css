@@ -1,0 +1,90 @@
+body {
+    font-family: 'Cascadia Code', sans-serif;
+    background: linear-gradient(45deg, #01010e 0%, #00001a 100%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #ffffff;
+    overflow: hidden; /* Disable scrolling */
+}
+
+.container {
+    text-align: center;
+    background: linear-gradient(135deg, #313131 0%, #1b1b1b 100%);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); /* Retained shadow for depth */
+    position: relative; /* Ensure container is isolated */
+    z-index: 1; /* Place container above stars */
+    backdrop-filter: blur(10px);
+    border: none; /* Removed any outline or border */
+    max-width: 600px;
+    animation: fadeIn 2s ease-in-out 1s; /* Added delay of 1s before fade starts */
+    animation-fill-mode: forwards; /* Ensure the animation stays at the final state */
+    opacity: 0; /* Start fully transparent */
+    color: #ffffff; /* White text for contrast */
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #d87504, #0086df);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.welcome {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.update {
+    font-size: 0.8rem;
+    margin: 1rem 0;
+    margin-bottom: 1rem;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.star {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #fff;
+    animation: twinkle 2s infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit; /* Inherit the gradient background */
+    z-index: 0; /* Place stars below everything */
+}
