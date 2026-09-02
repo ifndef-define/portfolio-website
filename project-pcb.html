@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Robotics Interface Board | Anissh Guruprasad</title>
+    <meta
+      name="description"
+      content="STM32G474-based PCB integrating sensors, motor drivers, and communication interfaces for competition robotics."
+    />
+    <link rel="icon" type="image/jpeg" href="assets/AG_Logo.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container">
+        <a href="anisshguru.html" class="brand">Anissh<span>.DEV</span></a>
+        <div class="nav-links">
+          <a href="anisshguru.html#about">About</a>
+          <a href="anisshguru.html#projects">Projects</a>
+          <a href="anisshguru.html#experience">Experience</a>
+          <a href="anisshguru.html#skills">Skills</a>
+          <a href="anisshguru.html#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="project-detail-hero">
+        <div class="container">
+          <a href="anisshguru.html#projects" class="back-link">← Back to Projects</a>
+          <div class="project-detail-header reveal">
+            <h1>Custom Robotics Interface Board</h1>
+            <div class="project-tags">
+              <span class="tag">PCB Design</span>
+              <span class="tag">Firmware</span>
+              <span class="tag">Sensors</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-detail-content">
+        <div class="container">
+          <div class="project-detail-main reveal">
+            <article class="detail-section">
+              <div class="project-image-full">
+                <!-- Add project image here -->
+              </div>
+
+              <div class="detail-subsection">
+                <h2>The Problem</h2>
+                <p>
+                  Our robotics team was using generic breakout boards and wiring harnesses. Every connection point was a potential 
+                  failure. We had reliability issues in competition, and debugging hardware failures during matches was a nightmare. 
+                  I wanted to design a single PCB that could integrate all our sensors, motor drivers, and communication 
+                  interfaces reliably.
+                </p>
+              </div>
+
+              <div class="detail-subsection">
+                <h2>The Solution</h2>
+                <p>
+                  Designed an STM32G474-based interface board (using KiCad) integrating quadrature encoders, 6-axis IMU (SPI), 
+                  multi-protocol comms (UART, I2C, CAN), power regulation (5V/3.3V), reverse polarity protection, and real-time 
+                  I/O. Firmware handles sensor fusion, encoder counting with hardware capture, and protocol multiplexing.
+                </p>
+                <h3>Design Highlights:</h3>
+                <ul>
+                  <li><strong>STM32G474 MCU:</strong> High-performance ARM Cortex-M4 with fast ADC and DMA</li>
+                  <li><strong>Encoder Inputs:</strong> Direct quadrature capture with hardware-based counting</li>
+                  <li><strong>IMU Integration:</strong> SPI-based 6-axis accelerometer/gyroscope</li>
+                  <li><strong>Multi-Protocol Comms:</strong> UART, I2C, and CAN for communication flexibility</li>
+                  <li><strong>Power Distribution:</strong> Dual buck regulators with reverse polarity protection</li>
+                  <li><strong>Signal Conditioning:</strong> ADC input filtering for analog sensor noise rejection</li>
+                </ul>
+              </div>
+
+              <div class="detail-subsection">
+                <h2>What I Learned</h2>
+                <p>
+                  PCB layout matters—ground planes, trace routing, and signal integrity directly affect firmware debugging. 
+                  Multi-protocol buses require careful state management. Power budgeting and thermal management must be considered 
+                  from day one.
+                </p>
+                <h3>Key Insights:</h3>
+                <ul>
+                  <li><strong>PCB Layout:</strong> Ground planes reduce noise, critical for analog sensors</li>
+                  <li><strong>Trace Routing:</strong> Kept high-speed signals short and direct to SPI/I2C devices</li>
+                  <li><strong>Decoupling:</strong> Proper capacitor placement near power pins is non-negotiable</li>
+                  <li><strong>DMA Efficiency:</strong> Used STM32 DMA to offload sensor data capture from CPU</li>
+                  <li><strong>Prototyping Iteration:</strong> First rev had issues; learned to validate power delivery early</li>
+                </ul>
+              </div>
+
+              <div class="detail-subsection">
+                <h2>Results & Takeaways</h2>
+                <p>
+                  The board worked reliably in competition. Hardware failures dropped significantly, and debugging issues became 
+                  faster because we had a known good baseline. This experience taught me that good hardware design isn't just about 
+                  features—it's about reliability, debuggability, and iteration.
+                </p>
+              </div>
+
+              <div class="detail-subsection tech-stack">
+                <h2>Tech Stack</h2>
+                <div class="tech-items">
+                  <div class="tech-item">
+                    <strong>Microcontroller:</strong> STM32G474 (Arm Cortex-M4)
+                  </div>
+                  <div class="tech-item">
+                    <strong>PCB Design:</strong> KiCad (Schematic, Layout, Manufacturing)
+                  </div>
+                  <div class="tech-item">
+                    <strong>Firmware:</strong> STM32 HAL, C
+                  </div>
+                  <div class="tech-item">
+                    <strong>Sensors:</strong> Quadrature Encoders, 6-Axis IMU (ICM-20689)
+                  </div>
+                  <div class="tech-item">
+                    <strong>Communication:</strong> UART, I2C, CAN Bus
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-nav">
+        <div class="container">
+          <p>← <a href="anisshguru.html#projects">Back to all projects</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <p class="eyebrow">More Projects</p>
+          <h3>Explore other work</h3>
+        </div>
+        <div class="footer-links">
+          <a href="anisshguru.html#projects">View All Projects</a>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/in/anissh-guru/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://github.com/ifndef-define" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <p class="copyright">© <span id="year"></span> Anissh Guruprasad | Portfolio</p>
+    </footer>
+
+    <script>
+      // Set copyright year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

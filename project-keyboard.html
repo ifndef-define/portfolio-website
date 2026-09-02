@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Custom Keyboard Platform | Anissh Guruprasad</title>
+    <meta
+      name="description"
+      content="Custom keyboard with Hall-effect sensing, analog multiplexing, and multi-MCU architecture."
+    />
+    <link rel="icon" type="image/jpeg" href="assets/AG_Logo.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container">
+        <a href="anisshguru.html" class="brand">Anissh<span>.DEV</span></a>
+        <div class="nav-links">
+          <a href="anisshguru.html#about">About</a>
+          <a href="anisshguru.html#projects">Projects</a>
+          <a href="anisshguru.html#experience">Experience</a>
+          <a href="anisshguru.html#skills">Skills</a>
+          <a href="anisshguru.html#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="project-detail-hero">
+        <div class="container">
+          <a href="anisshguru.html#projects" class="back-link">← Back to Projects</a>
+          <div class="project-detail-header reveal">
+            <h1>Advanced Custom Keyboard Platform</h1>
+            <div class="project-tags">
+              <span class="tag">Firmware</span>
+              <span class="tag">HID</span>
+              <span class="tag">Analog</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-detail-content">
+        <div class="container">
+          <div class="project-detail-main reveal">
+            <article class="detail-section">
+              <div class="project-image-full">
+                <!-- Add project image here -->
+              </div>
+
+              <div class="detail-subsection">
+                <h2>What I Was Trying to Understand</h2>
+                <p>
+                  Mechanical keyboards fascinated me, but I wanted to go deeper: what if I could sense key actuation analog-style? 
+                  How do distributed systems work when you have multiple MCUs? How do you handle high-speed communication and power 
+                  efficiency in a device that mostly sleeps? This project became an exploration of firmware architecture, analog sensing, 
+                  and embedded systems at the consumer product level.
+                </p>
+              </div>
+
+              <div class="detail-subsection">
+                <h2>What I Built</h2>
+                <p>
+                  A keyboard platform using Hall-effect magnetic switches with analog multiplexing (ADC), 128x64 SSD1306 TFT display 
+                  on I2C, QSPI flash storage for profiles, USB HID host communication, and an RP2040 satellite MCU for matrix scanning. 
+                  Firmware implements low-power modes, debouncing, and profile management.
+                </p>
+                <h3>Architecture:</h3>
+                <ul>
+                  <li><strong>Main MCU (RP2040):</strong> Managed HID communication, profile storage, and display control</li>
+                  <li><strong>Satellite MCU:</strong> Handled matrix scanning and analog key sensor reads</li>
+                  <li><strong>Hall-Effect Sensing:</strong> Analog multiplexing with ADC for pressure-sensitive input</li>
+                  <li><strong>Display (SSD1306):</strong> Real-time feedback on key state and active profile</li>
+                  <li><strong>QSPI Flash:</strong> Stored multiple keyboard profiles for different use cases</li>
+                  <li><strong>USB HID:</strong> Full USB host implementation for seamless OS integration</li>
+                </ul>
+              </div>
+
+              <div class="detail-subsection">
+                <h2>Key Takeaways</h2>
+                <p>
+                  Analog sensing requires careful calibration and noise filtering. Scaling to multiple MCUs means thinking about 
+                  synchronization and data consistency. Power-aware architecture (sleep states, clock gating) is essential for 
+                  battery-powered devices.
+                </p>
+                <h3>Technical Insights:</h3>
+                <ul>
+                  <li><strong>Analog Calibration:</strong> Hall sensors drift with temperature; needed per-key calibration routine</li>
+                  <li><strong>IIR Filtering:</strong> Low-pass filtering essential for debouncing analog signals</li>
+                  <li><strong>Multi-MCU Sync:</strong> Serial protocol with checksums for reliable inter-MCU communication</li>
+                  <li><strong>Power Efficiency:</strong> RP2040 sleep mode consumed nearly nothing; biggest drain was display</li>
+                  <li><strong>USB HID Compliance:</strong> RP2040 USB stack made HID implementation straightforward</li>
+                </ul>
+              </div>
+
+              <div class="detail-subsection">
+                <h2>Lessons Learned</h2>
+                <p>
+                  Building a complete product-like system revealed many hidden complexities: proper power sequencing, state machine 
+                  correctness across MCUs, and the importance of debug interfaces. The project taught me that firmware quality requires 
+                  thinking about edge cases and recovery paths.
+                </p>
+              </div>
+
+              <div class="detail-subsection tech-stack">
+                <h2>Tech Stack</h2>
+                <div class="tech-items">
+                  <div class="tech-item">
+                    <strong>Main MCU:</strong> RP2040 (Dual Arm Cortex-M0+)
+                  </div>
+                  <div class="tech-item">
+                    <strong>Satellite MCU:</strong> STM32L series (Low power ARM Cortex-M0+)
+                  </div>
+                  <div class="tech-item">
+                    <strong>Sensors:</strong> Hall-Effect switches, ADC multiplexing
+                  </div>
+                  <div class="tech-item">
+                    <strong>Display:</strong> SSD1306 128x64 OLED via I2C
+                  </div>
+                  <div class="tech-item">
+                    <strong>Storage:</strong> QSPI Flash (profile management)
+                  </div>
+                  <div class="tech-item">
+                    <strong>Communication:</strong> USB HID, Serial (inter-MCU), I2C
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-nav">
+        <div class="container">
+          <p>← <a href="anisshguru.html#projects">Back to all projects</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <p class="eyebrow">More Projects</p>
+          <h3>Explore other work</h3>
+        </div>
+        <div class="footer-links">
+          <a href="anisshguru.html#projects">View All Projects</a>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/in/anissh-guru/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://github.com/ifndef-define" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <p class="copyright">© <span id="year"></span> Anissh Guruprasad | Portfolio</p>
+    </footer>
+
+    <script>
+      // Set copyright year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Embedded Pac-Man on Spartan-7 | Anissh Guruprasad</title>
+    <meta
+      name="description"
+      content="FPGA hardware/software co-design project using MicroBlaze processor and custom RTL rendering logic."
+    />
+    <link rel="icon" type="image/jpeg" href="assets/AG_Logo.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container">
+        <a href="anisshguru.html" class="brand">Anissh<span>.DEV</span></a>
+        <div class="nav-links">
+          <a href="anisshguru.html#about">About</a>
+          <a href="anisshguru.html#projects">Projects</a>
+          <a href="anisshguru.html#experience">Experience</a>
+          <a href="anisshguru.html#skills">Skills</a>
+          <a href="anisshguru.html#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="project-detail-hero">
+        <div class="container">
+          <a href="anisshguru.html#projects" class="back-link">← Back to Projects</a>
+          <div class="project-detail-header reveal">
+            <h1>Embedded Pac-Man on Spartan-7</h1>
+            <div class="project-tags">
+              <span class="tag">FPGA</span>
+              <span class="tag">Embedded</span>
+              <span class="tag">Graphics</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-detail-content">
+        <div class="container">
+          <div class="project-detail-main reveal">
+            <article class="detail-section">
+              <div class="project-image-full">
+                <!-- Add project image here -->
+              </div>
+
+              <div class="detail-subsection">
+                <h2>The Challenge</h2>
+                <p>
+                  How do you build a graphics engine for a game on an FPGA? Most of my experience was low-level embedded systems. 
+                  This project pushed me to think about hardware acceleration, memory bandwidth, and rendering pipelines. The goal 
+                  was to implement real-time graphics output while maintaining game logic responsiveness.
+                </p>
+              </div>
+
+              <div class="detail-subsection">
+                <h2>What I Built</h2>
+                <p>
+                  A hardware/software co-design using MicroBlaze processor, AXI4-Lite interconnect, shared memory subsystem, and 
+                  custom RTL rendering logic. The FPGA handled VGA signal generation and display synchronization while the processor 
+                  managed game logic.
+                </p>
+                <h3>Key Components:</h3>
+                <ul>
+                  <li><strong>MicroBlaze Soft Processor:</strong> Managed game state, collision detection, and AI logic</li>
+                  <li><strong>AXI4-Lite Interconnect:</strong> Connected processor to peripheral modules with predictable latency</li>
+                  <li><strong>Custom Rendering RTL:</strong> Direct memory access to framebuffer with pipelined output</li>
+                  <li><strong>VGA Controller:</strong> Timing generation and signal synthesis for 640×480 @ 60Hz output</li>
+                  <li><strong>FIFO Buffers:</strong> Decoupled processor writes from rendering pipeline reads</li>
+                </ul>
+              </div>
+
+              <div class="detail-subsection">
+                <h2>Key Learnings</h2>
+                <p>
+                  Understanding memory hierarchy, timing constraints, and how to partition work between software and hardware. 
+                  Learned the importance of synchronization between clock domains and how FIFOs can decouple processor from 
+                  rendering pipelines.
+                </p>
+                <h3>Technical Insights:</h3>
+                <ul>
+                  <li><strong>Memory Hierarchy:</strong> BRAM vs. DDR tradeoffs for buffer size and latency</li>
+                  <li><strong>Clock Domain Crossing:</strong> Synchronizers needed for safe signal handoff between clock domains</li>
+                  <li><strong>Hardware/Software Partitioning:</strong> Graphics pipeline benefits more from hardware acceleration than game logic</li>
+                  <li><strong>Real-time Constraints:</strong> Deterministic pipeline timing enabled predictable frame rates</li>
+                  <li><strong>Debugging Embedded Systems:</strong> Logic analyzers essential for verifying HW/SW interfaces</li>
+                </ul>
+              </div>
+
+              <div class="detail-subsection">
+                <h2>Results & Takeaways</h2>
+                <p>
+                  Successfully implemented a fully-functional Pac-Man game running at 60 FPS on the Spartan-7 FPGA. The project 
+                  demonstrated how proper hardware/software co-design can achieve real-time performance while keeping power consumption 
+                  reasonable. This experience shaped my approach to embedded systems: understanding when to use hardware acceleration 
+                  versus software flexibility is crucial.
+                </p>
+              </div>
+
+              <div class="detail-subsection tech-stack">
+                <h2>Tech Stack</h2>
+                <div class="tech-items">
+                  <div class="tech-item">
+                    <strong>FPGA Platform:</strong> Spartan-7 (XC7A35T)
+                  </div>
+                  <div class="tech-item">
+                    <strong>HDL:</strong> SystemVerilog, Xilinx IP (MicroBlaze, AXI)
+                  </div>
+                  <div class="tech-item">
+                    <strong>Tools:</strong> Vivado Design Suite, Vivado HLS
+                  </div>
+                  <div class="tech-item">
+                    <strong>Firmware:</strong> C/C++ (compiled to MicroBlaze ISA)
+                  </div>
+                  <div class="tech-item">
+                    <strong>Debugging:</strong> Vivado Debug Hub, Logic Analyzer
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-nav">
+        <div class="container">
+          <p>← <a href="anisshguru.html#projects">Back to all projects</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <p class="eyebrow">More Projects</p>
+          <h3>Explore other work</h3>
+        </div>
+        <div class="footer-links">
+          <a href="anisshguru.html#projects">View All Projects</a>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/in/anissh-guru/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://github.com/ifndef-define" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <p class="copyright">© <span id="year"></span> Anissh Guruprasad | Portfolio</p>
+    </footer>
+
+    <script>
+      // Set copyright year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
