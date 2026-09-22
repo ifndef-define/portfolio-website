@@ -3,32 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Embedded Pac-Man on Spartan-7 | Anissh Guruprasad</title>
+    <title>Advanced Custom Keyboard Platform | Anissh Guruprasad</title>
     <meta
       name="description"
-      content="FPGA hardware/software co-design project using MicroBlaze processor and custom RTL rendering logic."
+      content="Custom keyboard with Hall-effect sensing, analog multiplexing, and multi-MCU architecture."
     />
-    <link rel="icon" type="image/jpeg" href="assets/AG_Logo.jpg" />
+    <link rel="icon" type="image/jpeg" href="../assets/AG_Logo.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
     <!-- Header -->
     <header class="site-header">
       <nav class="nav container">
-        <button type="button" class="brand-btn" onclick="window.location.href='anisshguru.html'">[anissh<span>.dev</span>]</button>
+        <button type="button" class="brand-btn" onclick="window.location.href='../anisshguru.html'">[anissh<span>.dev</span>]</button>
         <button type="button" class="hamburger-btn" id="hamburger-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
         <div class="nav-links" id="nav-links-menu">
-          <a href="anisshguru.html#about">[About]</a>
-          <a href="anisshguru.html#projects">[Projects]</a>
-          <a href="anisshguru.html#experience">[Experience]</a>
-          <a href="anisshguru.html#skills">[Skills]</a>
-          <a href="anisshguru.html#contact">[Contact]</a>
+          <a href="../anisshguru.html#about">[About]</a>
+          <a href="../anisshguru.html#projects">[Projects]</a>
+          <a href="../anisshguru.html#experience">[Experience]</a>
+          <a href="../anisshguru.html#skills">[Skills]</a>
+          <a href="../anisshguru.html#contact">[Contact]</a>
         </div>
       </nav>
     </header>
@@ -36,15 +36,14 @@
     <main>
       <section class="project-detail-hero">
         <div class="container">
-          <a href="anisshguru.html#projects" class="back-link">← Back to Projects</a>
+          <a href="../anisshguru.html#projects" class="back-link">← Back to Projects</a>
           <div class="project-detail-header">
-            <h1>Embedded Pac-Man on Spartan-7</h1>
+            <h1>Advanced Custom Keyboard Platform</h1>
             <div class="project-tags">
-              <span class="tag">FPGA</span>
-              <span class="tag">MicroBlaze</span>
-              <span class="tag">SystemVerilog</span>
-              <span class="tag">C</span>
-              <span class="tag">VGA</span>
+              <span class="tag">Hall Effect</span>
+              <span class="tag">Analog MUX</span>
+              <span class="tag">Firmware</span>
+              <span class="tag">Multi-MCU</span>
             </div>
           </div>
         </div>
@@ -54,61 +53,57 @@
         <div class="container">
           <div class="project-detail-main">
             <article class="detail-section crosshair-card">
-              <div class="project-system-note-minimal">
-                <span class="note-icon">⚠</span>
-                <span class="note-text">RTL &amp; MicroBlaze source files were corrupted and lost. Rebuilding with an updated hardware pipeline.</span>
-              </div>
-
               <div class="detail-subsection">
-                <h2>The Challenge</h2>
+                <h2>What I Was Trying to Understand</h2>
                 <p>
-                  How do you build a graphics engine for a game on an FPGA? Most of my experience was low-level embedded systems. 
-                  This project pushed me to think about hardware acceleration, memory bandwidth, and rendering pipelines. The goal 
-                  was to implement real-time graphics output while maintaining game logic responsiveness.
+                  Mechanical keyboards fascinated me, but I wanted to go deeper: what if I could sense key actuation analog-style? 
+                  How do distributed systems work when you have multiple MCUs? How do you handle high-speed communication and power 
+                  efficiency in a device that mostly sleeps? This project became an exploration of firmware architecture, analog sensing, 
+                  and embedded systems at the consumer product level.
                 </p>
               </div>
 
               <div class="detail-subsection">
                 <h2>What I Built</h2>
                 <p>
-                  A hardware/software co-design using MicroBlaze processor, AXI4-Lite interconnect, shared memory subsystem, and 
-                  custom RTL rendering logic. The FPGA handled VGA signal generation and display synchronization while the processor 
-                  managed game logic.
+                  A keyboard platform using Hall-effect magnetic switches with analog multiplexing (ADC), 128x64 SSD1306 TFT display 
+                  on I2C, QSPI flash storage for profiles, USB HID host communication, and an RP2040 satellite MCU for matrix scanning. 
+                  Firmware implements low-power modes, debouncing, and profile management.
                 </p>
-                <h3>Key Components:</h3>
+                <h3>Architecture:</h3>
                 <ul>
-                  <li><strong>MicroBlaze Soft Processor:</strong> Managed game state, collision detection, and AI logic</li>
-                  <li><strong>AXI4-Lite Interconnect:</strong> Connected processor to peripheral modules with predictable latency</li>
-                  <li><strong>Custom Rendering RTL:</strong> Direct memory access to framebuffer with pipelined output</li>
-                  <li><strong>VGA Controller:</strong> Timing generation and signal synthesis for 640×480 @ 60Hz output</li>
-                  <li><strong>FIFO Buffers:</strong> Decoupled processor writes from rendering pipeline reads</li>
+                  <li><strong>Main MCU (RP2040):</strong> Managed HID communication, profile storage, and display control</li>
+                  <li><strong>Satellite MCU:</strong> Handled matrix scanning and analog key sensor reads</li>
+                  <li><strong>Hall-Effect Sensing:</strong> Analog multiplexing with ADC for pressure-sensitive input</li>
+                  <li><strong>Display (SSD1306):</strong> Real-time feedback on key state and active profile</li>
+                  <li><strong>QSPI Flash:</strong> Stored multiple keyboard profiles for different use cases</li>
+                  <li><strong>USB HID:</strong> Full USB host implementation for seamless OS integration</li>
                 </ul>
               </div>
 
               <div class="detail-subsection">
-                <h2>Key Learnings</h2>
+                <h2>Key Takeaways</h2>
                 <p>
-                  Understanding memory hierarchy, timing constraints, and how to partition work between software and hardware. 
-                  Learned the importance of synchronization between clock domains and how FIFOs can decouple processor from 
-                  rendering pipelines.
+                  Analog sensing requires careful calibration and noise filtering. Scaling to multiple MCUs means thinking about 
+                  synchronization and data consistency. Power-aware architecture (sleep states, clock gating) is essential for 
+                  battery-powered devices.
                 </p>
                 <h3>Technical Insights:</h3>
                 <ul>
-                  <li><strong>Memory Hierarchy:</strong> BRAM vs. DDR tradeoffs for buffer size and latency</li>
-                  <li><strong>Clock Domain Crossing:</strong> Synchronizers needed for safe signal handoff between clock domains</li>
-                  <li><strong>Hardware/Software Partitioning:</strong> Graphics pipeline benefits more from hardware acceleration than game logic</li>
-                  <li><strong>Real-time Constraints:</strong> Deterministic pipeline timing enabled predictable frame rates</li>
-                  <li><strong>Debugging Embedded Systems:</strong> Logic analyzers essential for verifying HW/SW interfaces</li>
+                  <li><strong>Analog Calibration:</strong> Hall sensors drift with temperature; needed per-key calibration routine</li>
+                  <li><strong>IIR Filtering:</strong> Low-pass filtering essential for debouncing analog signals</li>
+                  <li><strong>Multi-MCU Sync:</strong> Serial protocol with checksums for reliable inter-MCU communication</li>
+                  <li><strong>Power Efficiency:</strong> RP2040 sleep mode consumed nearly nothing; biggest drain was display</li>
+                  <li><strong>USB HID Compliance:</strong> RP2040 USB stack made HID implementation straightforward</li>
                 </ul>
               </div>
 
               <div class="detail-subsection">
-                <h2>Results &amp; Takeaways</h2>
+                <h2>Lessons Learned</h2>
                 <p>
-                  Successfully implemented a fully-functional Pac-Man game running at 60 FPS on the Spartan-7 FPGA. The project 
-                  demonstrated how proper hardware/software co-design can achieve real-time performance while keeping power consumption 
-                  reasonable. This experience shaped my approach to embedded systems: understanding when to use hardware acceleration 
-                  versus software flexibility is crucial.
+                  Building a complete product-like system revealed many hidden complexities: proper power sequencing, state machine 
+                  correctness across MCUs, and the importance of debug interfaces. The project taught me that firmware quality requires 
+                  thinking about edge cases and recovery paths.
                 </p>
               </div>
 
@@ -116,19 +111,22 @@
                 <h2>Tech Stack</h2>
                 <div class="tech-items">
                   <div class="tech-item">
-                    <strong>FPGA Platform:</strong> Spartan-7 (XC7A35T)
+                    <strong>Main MCU:</strong> RP2040 (Dual Arm Cortex-M0+)
                   </div>
                   <div class="tech-item">
-                    <strong>HDL:</strong> SystemVerilog, Xilinx IP (MicroBlaze, AXI)
+                    <strong>Satellite MCU:</strong> STM32L series (Low power ARM Cortex-M0+)
                   </div>
                   <div class="tech-item">
-                    <strong>Tools:</strong> Vivado Design Suite, Vivado HLS
+                    <strong>Sensors:</strong> Hall-Effect switches, ADC multiplexing
                   </div>
                   <div class="tech-item">
-                    <strong>Firmware:</strong> C/C++ (compiled to MicroBlaze ISA)
+                    <strong>Display:</strong> SSD1306 128x64 OLED via I2C
                   </div>
                   <div class="tech-item">
-                    <strong>Debugging:</strong> Vivado Debug Hub, Logic Analyzer
+                    <strong>Storage:</strong> QSPI Flash (profile management)
+                  </div>
+                  <div class="tech-item">
+                    <strong>Communication:</strong> USB HID, Serial (inter-MCU), I2C
                   </div>
                 </div>
               </div>
@@ -139,7 +137,7 @@
 
       <section class="project-nav">
         <div class="container">
-          <p>← <a href="anisshguru.html#projects">Back to all projects</a></p>
+          <p>← <a href="../anisshguru.html#projects">Back to all projects</a></p>
         </div>
       </section>
     </main>
@@ -232,6 +230,6 @@
       </section>
     </div>
 
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
   </body>
 </html>

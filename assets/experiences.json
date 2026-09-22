@@ -1,0 +1,82 @@
+{
+    "experiences": [
+        {
+            "title": "Programming Team Lead",
+            "company": {
+                "name": "Illini VEX Robotics",
+                "url": "https://illinivexrobotics.uillinois.org"
+            },
+            "date": {
+                "date_start": "Aug 2023",
+                "date_end": "",
+                "status": "present"
+            },
+            "image": "",
+            "work": [
+                "Lead software architecture for 4+ competition robots",
+                "Mentor 10+ programmers through embedded systems and control theory",
+                "Design autonomous navigation (odometry, PID, Pure Pursuit, path planning, localization)",
+                "Manage codebase, code reviews, and testing infrastructure"
+            ],
+            "skills": [
+                "C++",
+                "RobotC",
+                "Odometry",
+                "PID Control",
+                "Pure Pursuit",
+                "Path Planning"
+            ]
+        },
+        {
+            "title": "Event Partner & Tournament Operations",
+            "company": {
+                "name": "VEX Robotics Regional Tournaments",
+                "url": ""
+            },
+            "date": {
+                "date_start": "2024",
+                "date_end": "",
+                "status": "present"
+            },
+            "image": "",
+            "work": [
+                "Help host 6+ regional tournaments with 30+ teams each",
+                "Coordinate 50+ volunteers across judging, training, and logistics",
+                "Manage tournament flow, scoring systems, and livestream infrastructure"
+            ],
+            "skills": [
+                "Tournament Operations",
+                "Volunteer Coordination",
+                "Scoring Systems",
+                "Logistics"
+            ]
+        },
+        {
+            "title": "Independent Hardware & Firmware Engineer",
+            "company": {
+                "name": "Self-directed projects",
+                "url": ""
+            },
+            "date": {
+                "date_start": "2023",
+                "date_end": "",
+                "status": "present"
+            },
+            "image": "",
+            "work": [
+                "Design PCBs with KiCad, iterate through prototyping and testing",
+                "Develop firmware for microcontrollers (STM32, RP2040, ESP32)",
+                "Conduct measurement, debugging, and validation of hardware/firmware integration",
+                "Apply power design, signal integrity, and protection principles"
+            ],
+            "skills": [
+                "KiCad",
+                "PCB Design",
+                "STM32",
+                "RP2040",
+                "ESP32",
+                "Hardware Debugging"
+            ]
+        }
+    ]
+}

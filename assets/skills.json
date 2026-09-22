@@ -1,0 +1,70 @@
+{
+    "skills": {
+        "Programming Languages": [
+            "C",
+            "C++",
+            "Python",
+            "SystemVerilog",
+            "SQL",
+            "Shell scripting"
+        ],
+        "Microcontrollers & Processors": [
+            "STM32 (G4, H7, L4)",
+            "RP2040/RP2350",
+            "ESP32-C3",
+            "ARM Cortex-M",
+            "bare-metal HAL"
+        ],
+        "FPGA & HDL": [
+            "Spartan-7 FPGA",
+            "Vivado/Vitis HLS",
+            "SystemVerilog",
+            "MicroBlaze soft processor",
+            "AXI interconnect"
+        ],
+        "PCB & Hardware Design": [
+            "KiCad (schematic, layout, simulation)",
+            "power electronics",
+            "signal integrity",
+            "thermal management",
+            "EMI/EMC"
+        ],
+        "Communication Interfaces": [
+            "SPI",
+            "QSPI",
+            "UART",
+            "I2C",
+            "RS-485",
+            "CAN",
+            "USB HID",
+            "ADC",
+            "PWM",
+            "GPIO",
+            "quadrature encoders"
+        ],
+        "Robotics & Control Theory": [
+            "Odometry",
+            "PID control loops",
+            "Pure Pursuit path following",
+            "spline generation",
+            "particle filter localization",
+            "motion planning"
+        ],
+        "Sensors & Peripherals": [
+            "IMU/accelerometers (SPI/I2C)",
+            "quadrature encoders",
+            "magnetometers",
+            "pressure sensors",
+            "analog multiplexing",
+            "noise filtering"
+        ],
+        "Development & Testing": [
+            "Oscilloscope debugging",
+            "logic analyzers",
+            "real-time measurements",
+            "unit testing",
+            "version control (Git)",
+            "embedded debugging"
+        ]
+    }
+}

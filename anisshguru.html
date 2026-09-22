@@ -101,7 +101,7 @@
 };
 
 <span class="token class-name">about_me_t</span> new_engineer = {
-  <span class="token string">"University of Illinois Urbana-Champaign"</span>,
+  <a class="code-link" href="https://illinois.edu" target="_blank" rel="noreferrer"><span class="token string">"University of Illinois Urbana-Champaign"</span></a>,
   <span class="token string">"B.S. in Computer Engineering"</span>,
   <span class="token string">"Expected Graduation: May 2028"</span>,
   <span class="token string">"Project-based learning and experience in"</span>
@@ -119,13 +119,12 @@
             </div>
           </div>
 
-          <!-- Code Output Terminal & Text Bouncing Loader -->
+          <!-- Code Output Terminal -->
           <div class="code-output-container" id="code-output-container">
             <div class="terminal-output-box">
               <div class="output-cmd-line">
                 <span class="output-cmd">$ gcc portfolio.c -o resume &amp;&amp; ./resume</span>
               </div>
-              <div class="compile-loader" id="compile-loader-text">[=---]</div>
               <div class="output-result" id="output-result-text">&gt; New Engineer defined: Anissh Guruprasad. See output below for more information.</div>
             </div>
           </div>
@@ -171,167 +170,153 @@
             </div>
 
             <div class="projects-list">
-              <!-- Project 1 (Featured + Minimal Corruption Notice) -->
-              <article class="project-item crosshair-card is-featured">
-                <div class="project-topbar">
-                  <div class="project-title-group">
-                    <span class="project-star" title="Featured Project" aria-label="Featured Project">★</span>
-                    <h3 class="project-name"><a href="project-fpga.html">Embedded Pac-Man on Spartan-7</a></h3>
-                    <span class="project-badge">FEATURED</span>
-                  </div>
+            <article class="project-item crosshair-card is-featured">
+              <div class="project-topbar">
+                <div class="project-title-group">
+                  <h3 class="project-name"><a href="projects/project-fpga.html">Embedded Pac-Man on Spartan-7</a></h3>
+                  <span class="project-badge">FEATURED</span>
+                </div>
                   <div class="project-status-col">
-                    <span class="project-year">2024</span>
+                    <span class="status-completed-text">2024</span>
                     <div class="live-score-line completed" aria-hidden="true"></div>
                   </div>
-                </div>
-                <div class="project-system-note-minimal">
-                  <span class="note-icon">⚠</span>
-                  <span class="note-text">Unforunately, the RTL &amp; MicroBlaze source files were corrupted and lost during project demo. Currently rebuilding with an updated hardware pipeline.</span>
-                </div>
-                <p class="project-summary">Hardware/software co-design using MicroBlaze soft processor and custom RTL video rendering pipeline for real-time arcade emulation.</p>
-                <div class="project-tags">
-                  <span class="tag">FPGA</span>
-                  <span class="tag">MicroBlaze</span>
-                  <span class="tag">SystemVerilog</span>
-                  <span class="tag">C</span>
-                  <span class="tag">VGA</span>
-                </div>
-                <div class="project-actions">
-                  <a href="project-fpga.html" class="system-link">Documentation <span class="arrow">→</span></a>
-                </div>
-              </article>
+              </div>
+              <div class="project-system-note-minimal note-bad">
+                <span class="note-icon">⚠️</span>
+                <span class="note-text">Unforunately, the RTL & MicroBlaze source files were corrupted and lost during project demo. Currently rebuilding with an updated hardware pipeline.</span>
+              </div>
+              <p class="project-summary">Hardware/software co-design using MicroBlaze soft processor and custom RTL video rendering pipeline for real-time arcade emulation.</p>
+              <div class="project-tags">
+                <span class="tag">FPGA</span>
+                <span class="tag">MicroBlaze</span>
+                <span class="tag">SystemVerilog</span>
+                <span class="tag">C</span>
+                <span class="tag">VGA</span>
+              </div>
+              <div class="project-actions">
+                <a href="projects/project-fpga.html" class="system-link">Documentation <span class="arrow">→</span></a>
+              </div>
+            </article>
 
-              <!-- Project 2 (Featured + On Hold) -->
-              <article class="project-item crosshair-card is-featured">
-                <div class="project-topbar">
-                  <div class="project-title-group">
-                    <span class="project-star" title="Featured Project" aria-label="Featured Project">★</span>
-                    <h3 class="project-name"><a href="project-pcb.html">Custom Robotics Interface Board</a></h3>
-                    <span class="project-badge">FEATURED</span>
-                  </div>
+            <article class="project-item crosshair-card is-featured">
+              <div class="project-topbar">
+                <div class="project-title-group">
+                  <h3 class="project-name"><a href="projects/project-pcb.html">Custom Robotics Interface Board</a></h3>
+                  <span class="project-badge">FEATURED</span>
+                </div>
                   <div class="project-status-col">
                     <span class="status-on-hold-text">On Hold<span class="pipe">|</span><span class="on-hold-date">Aug 2024</span></span>
-                    <div class="live-score-line completed" aria-hidden="true"></div>
+                    <div class="live-score-line on-hold" aria-hidden="true"></div>
                   </div>
-                </div>
-                <p class="project-summary">STM32G474-based custom PCB integrating sensor interfaces, motor drivers, CAN/RS-485 communication, and power regulation.</p>
-                <div class="project-tags">
-                  <span class="tag">PCB Design</span>
-                  <span class="tag">KiCad</span>
-                  <span class="tag">STM32G4</span>
-                  <span class="tag">Hardware</span>
-                </div>
-                <div class="project-actions">
-                  <a href="project-pcb.html" class="system-link">Documentation <span class="arrow">→</span></a>
-                </div>
-              </article>
+              </div>
+              <p class="project-summary">STM32G474-based custom PCB integrating sensor interfaces, motor drivers, CAN/RS-485 communication, and power regulation.</p>
+              <div class="project-tags">
+                <span class="tag">PCB Design</span>
+                <span class="tag">KiCad</span>
+                <span class="tag">STM32G4</span>
+                <span class="tag">Hardware</span>
+              </div>
+              <div class="project-actions">
+                <a href="projects/project-pcb.html" class="system-link">Documentation <span class="arrow">→</span></a>
+              </div>
+            </article>
 
-              <!-- Project 3 (Featured + In Progress) -->
-              <article class="project-item crosshair-card is-featured">
-                <div class="project-topbar">
-                  <div class="project-title-group">
-                    <span class="project-star" title="Featured Project" aria-label="Featured Project">★</span>
-                    <h3 class="project-name"><a href="project-keyboard.html">Advanced Custom Keyboard Platform</a></h3>
-                    <span class="project-badge">FEATURED</span>
-                  </div>
+            <article class="project-item crosshair-card is-featured">
+              <div class="project-topbar">
+                <div class="project-title-group">
+                  <h3 class="project-name"><a href="projects/project-keyboard.html">Advanced Custom Keyboard Platform</a></h3>
+                  <span class="project-badge">FEATURED</span>
+                </div>
                   <div class="project-status-col">
                     <span class="status-in-progress-text">In Progress</span>
                     <div class="live-score-line active blue-live-line" aria-hidden="true"></div>
                   </div>
-                </div>
-                <p class="project-summary">Hall-effect sensing with analog multiplexing and multi-MCU architecture for ultra-low latency input detection and rapid trigger customization.</p>
-                <div class="project-tags">
-                  <span class="tag">Hall Effect</span>
-                  <span class="tag">Analog MUX</span>
-                  <span class="tag">Firmware</span>
-                  <span class="tag">Multi-MCU</span>
-                </div>
-                <div class="project-actions">
-                  <a href="project-keyboard.html" class="system-link">Documentation <span class="arrow">→</span></a>
-                </div>
-              </article>
+              </div>
+              <p class="project-summary">Hall-effect sensing with analog multiplexing and multi-MCU architecture for ultra-low latency input detection and rapid trigger customization.</p>
+              <div class="project-tags">
+                <span class="tag">Hall Effect</span>
+                <span class="tag">Analog MUX</span>
+                <span class="tag">Firmware</span>
+                <span class="tag">Multi-MCU</span>
+              </div>
+              <div class="project-actions">
+                <a href="projects/project-keyboard.html" class="system-link">Documentation <span class="arrow">→</span></a>
+              </div>
+            </article>
 
-              <!-- Project 4 (Standard + In Progress) -->
-              <article class="project-item crosshair-card">
-                <div class="project-topbar">
-                  <div class="project-title-group">
-                    <span class="project-star empty" aria-hidden="true">☆</span>
-                    <h3 class="project-name">VEX Robotics Autonomous Navigation</h3>
-                  </div>
+            <article class="project-item crosshair-card">
+              <div class="project-topbar">
+                <div class="project-title-group">
+                  <h3 class="project-name">VEX Robotics Autonomous Navigation</h3>
+                </div>
                   <div class="project-status-col">
                     <span class="status-in-progress-text">In Progress</span>
                     <div class="live-score-line active blue-live-line" aria-hidden="true"></div>
                   </div>
-                </div>
-                <p class="project-summary">Designed and implemented autonomous navigation systems for competition robots using odometry, PID control, Pure Pursuit path following, spline generation, and particle filter localization.</p>
-                <div class="project-tags">
-                  <span class="tag">C++</span>
-                  <span class="tag">Robotics</span>
-                  <span class="tag">Control Theory</span>
-                  <span class="tag">PID</span>
-                </div>
-              </article>
+              </div>
+              <p class="project-summary">Designed and implemented autonomous navigation systems for competition robots using odometry, PID control, Pure Pursuit path following, spline generation, and particle filter localization.</p>
+              <div class="project-tags">
+                <span class="tag">C++</span>
+                <span class="tag">Robotics</span>
+                <span class="tag">Control Theory</span>
+                <span class="tag">PID</span>
+              </div>
+            </article>
 
-              <!-- Project 5 (Standard) -->
-              <article class="project-item crosshair-card">
-                <div class="project-topbar">
-                  <div class="project-title-group">
-                    <span class="project-star empty" aria-hidden="true">☆</span>
-                    <h3 class="project-name">Real-Time Robotics Simulation</h3>
-                  </div>
+            <article class="project-item crosshair-card">
+              <div class="project-topbar">
+                <div class="project-title-group">
+                  <h3 class="project-name">Real-Time Robotics Simulation</h3>
+                </div>
                   <div class="project-status-col">
-                    <span class="project-year">2023</span>
+                    <span class="status-completed-text">2023</span>
                     <div class="live-score-line completed" aria-hidden="true"></div>
                   </div>
-                </div>
-                <p class="project-summary">Built a discrete-time simulator for robot dynamics, actuator constraints, and sensor noise. Used for algorithm development and testing before deploying to hardware.</p>
-                <div class="project-tags">
-                  <span class="tag">Python</span>
-                  <span class="tag">Simulation</span>
-                  <span class="tag">Physics</span>
-                </div>
-              </article>
+              </div>
+              <p class="project-summary">Built a discrete-time simulator for robot dynamics, actuator constraints, and sensor noise. Used for algorithm development and testing before deploying to hardware.</p>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Simulation</span>
+                <span class="tag">Physics</span>
+              </div>
+            </article>
 
-              <!-- Project 6 (Standard) -->
-              <article class="project-item crosshair-card">
-                <div class="project-topbar">
-                  <div class="project-title-group">
-                    <span class="project-star empty" aria-hidden="true">☆</span>
-                    <h3 class="project-name">Power Electronics &amp; Battery Management</h3>
-                  </div>
+            <article class="project-item crosshair-card">
+              <div class="project-topbar">
+                <div class="project-title-group">
+                  <h3 class="project-name">Power Electronics & Battery Management</h3>
+                </div>
                   <div class="project-status-col">
-                    <span class="project-year">2023</span>
+                    <span class="status-completed-text">2023</span>
                     <div class="live-score-line completed" aria-hidden="true"></div>
                   </div>
-                </div>
-                <p class="project-summary">Explored buck/boost converters, LiPo battery monitoring, coulomb counting, and thermal management circuits. Implemented BMS firmware with cell balancing logic.</p>
-                <div class="project-tags">
-                  <span class="tag">PCB</span>
-                  <span class="tag">Power</span>
-                  <span class="tag">Firmware</span>
-                </div>
-              </article>
+              </div>
+              <p class="project-summary">Explored buck/boost converters, LiPo battery monitoring, coulomb counting, and thermal management circuits. Implemented BMS firmware with cell balancing logic.</p>
+              <div class="project-tags">
+                <span class="tag">PCB</span>
+                <span class="tag">Power</span>
+                <span class="tag">Firmware</span>
+              </div>
+            </article>
 
-              <!-- Project 7 (Standard) -->
-              <article class="project-item crosshair-card">
-                <div class="project-topbar">
-                  <div class="project-title-group">
-                    <span class="project-star empty" aria-hidden="true">☆</span>
-                    <h3 class="project-name">STM32 HAL and Bare-Metal Exploration</h3>
-                  </div>
+            <article class="project-item crosshair-card">
+              <div class="project-topbar">
+                <div class="project-title-group">
+                  <h3 class="project-name">STM32 HAL and Bare-Metal Exploration</h3>
+                </div>
                   <div class="project-status-col">
-                    <span class="project-year">2023</span>
+                    <span class="status-completed-text">2023</span>
                     <div class="live-score-line completed" aria-hidden="true"></div>
                   </div>
-                </div>
-                <p class="project-summary">Deep-dived into ARM Cortex-M interrupt handling, DMA configuration, peripheral clocking, memory protection, and linker scripts. Built from bare registers up to working HAL implementations.</p>
-                <div class="project-tags">
-                  <span class="tag">C</span>
-                  <span class="tag">Embedded</span>
-                  <span class="tag">ARM Cortex-M</span>
-                  <span class="tag">Registers</span>
-                </div>
-              </article>
+              </div>
+              <p class="project-summary">Deep-dived into ARM Cortex-M interrupt handling, DMA configuration, peripheral clocking, memory protection, and linker scripts. Built from bare registers up to working HAL implementations.</p>
+              <div class="project-tags">
+                <span class="tag">C</span>
+                <span class="tag">Embedded</span>
+                <span class="tag">ARM Cortex-M</span>
+                <span class="tag">Registers</span>
+              </div>
+            </article>
             </div>
           </div>
         </section>
@@ -346,73 +331,92 @@
             </div>
 
             <div class="experience-list">
-              <!-- Item 1 (Active -> Google Live Score Green Line) -->
-              <article class="experience-item crosshair-card">
-                <div class="exp-header-row">
-                  <div class="exp-icon-placeholder" title="Company Logo Placeholder">?</div>
-                  <div class="exp-header-content">
-                    <div class="exp-top">
-                      <h3 class="exp-role">Programming Team Lead</h3>
-                      <div class="exp-time is-present">
-                        <span>Aug 2023 - Present</span>
-                        <div class="live-score-line active" aria-hidden="true"></div>
-                      </div>
+            <article class="experience-item crosshair-card is-featured">
+              <div class="exp-header-row">
+                <div class="exp-icon-placeholder" title="Company Logo Placeholder">?</div>
+                <div class="exp-header-content">
+                  <div class="exp-top">
+                    <h3 class="exp-role">Programming Team Lead</h3>
+                    <div class="exp-time is-present">
+                      <span>Aug 2023 - Present</span>
+                      <div class="live-score-line active blue-live-line" aria-hidden="true"></div>
                     </div>
-                    <p class="exp-org">Illini VEX Robotics</p>
                   </div>
+                  <p class="exp-org"><a href="https://illinivexrobotics.uillinois.org" target="_blank" rel="noreferrer">Illini VEX Robotics <span class="arrow arrow-external">↗</span></a></p>
                 </div>
-                <ul class="exp-points">
-                  <li>Lead software architecture for 4+ competition robots</li>
-                  <li>Mentor 10+ programmers through embedded systems and control theory</li>
-                  <li>Design autonomous navigation (odometry, PID, Pure Pursuit, path planning, localization)</li>
-                  <li>Manage codebase, code reviews, and testing infrastructure</li>
-                </ul>
-              </article>
+              </div>
+              <ul class="exp-points">
+                <li>Lead software architecture for 4+ competition robots</li>
+                <li>Mentor 10+ programmers through embedded systems and control theory</li>
+                <li>Design autonomous navigation (odometry, PID, Pure Pursuit, path planning, localization)</li>
+                <li>Manage codebase, code reviews, and testing infrastructure</li>
+              </ul>
+              <div class="project-tags exp-skills">
+                <span class="tag">C++</span>
+                <span class="tag">RobotC</span>
+                <span class="tag">Odometry</span>
+                <span class="tag">PID Control</span>
+                <span class="tag">Pure Pursuit</span>
+                <span class="tag">Path Planning</span>
+              </div>
+            </article>
 
-              <!-- Item 2 (Active -> Google Live Score Green Line) -->
-              <article class="experience-item crosshair-card">
-                <div class="exp-header-row">
-                  <div class="exp-icon-placeholder" title="Company Logo Placeholder">?</div>
-                  <div class="exp-header-content">
-                    <div class="exp-top">
-                      <h3 class="exp-role">Event Partner &amp; Tournament Operations</h3>
-                      <div class="exp-time is-present">
-                        <span>2024 - Present</span>
-                        <div class="live-score-line active" aria-hidden="true"></div>
-                      </div>
+            <article class="experience-item crosshair-card is-featured">
+              <div class="exp-header-row">
+                <div class="exp-icon-placeholder" title="Company Logo Placeholder">?</div>
+                <div class="exp-header-content">
+                  <div class="exp-top">
+                    <h3 class="exp-role">Event Partner & Tournament Operations</h3>
+                    <div class="exp-time is-present">
+                      <span>2024 - Present</span>
+                      <div class="live-score-line active blue-live-line" aria-hidden="true"></div>
                     </div>
-                    <p class="exp-org">VEX Robotics Regional Tournaments</p>
                   </div>
+                  <p class="exp-org">VEX Robotics Regional Tournaments</p>
                 </div>
-                <ul class="exp-points">
-                  <li>Help host 6+ regional tournaments with 30+ teams each</li>
-                  <li>Coordinate 50+ volunteers across judging, training, and logistics</li>
-                  <li>Manage tournament flow, scoring systems, and livestream infrastructure</li>
-                </ul>
-              </article>
+              </div>
+              <ul class="exp-points">
+                <li>Help host 6+ regional tournaments with 30+ teams each</li>
+                <li>Coordinate 50+ volunteers across judging, training, and logistics</li>
+                <li>Manage tournament flow, scoring systems, and livestream infrastructure</li>
+              </ul>
+              <div class="project-tags exp-skills">
+                <span class="tag">Tournament Operations</span>
+                <span class="tag">Volunteer Coordination</span>
+                <span class="tag">Scoring Systems</span>
+                <span class="tag">Logistics</span>
+              </div>
+            </article>
 
-              <!-- Item 3 (Active -> Google Live Score Green Line) -->
-              <article class="experience-item crosshair-card">
-                <div class="exp-header-row">
-                  <div class="exp-icon-placeholder" title="Company Logo Placeholder">?</div>
-                  <div class="exp-header-content">
-                    <div class="exp-top">
-                      <h3 class="exp-role">Independent Hardware &amp; Firmware Engineer</h3>
-                      <div class="exp-time is-present">
-                        <span>2023 - Present</span>
-                        <div class="live-score-line active" aria-hidden="true"></div>
-                      </div>
+            <article class="experience-item crosshair-card is-featured">
+              <div class="exp-header-row">
+                <div class="exp-icon-placeholder" title="Company Logo Placeholder">?</div>
+                <div class="exp-header-content">
+                  <div class="exp-top">
+                    <h3 class="exp-role">Independent Hardware & Firmware Engineer</h3>
+                    <div class="exp-time is-present">
+                      <span>2023 - Present</span>
+                      <div class="live-score-line active blue-live-line" aria-hidden="true"></div>
                     </div>
-                    <p class="exp-org">Self-directed projects</p>
                   </div>
+                  <p class="exp-org">Self-directed projects</p>
                 </div>
-                <ul class="exp-points">
-                  <li>Design PCBs with KiCad, iterate through prototyping and testing</li>
-                  <li>Develop firmware for microcontrollers (STM32, RP2040, ESP32)</li>
-                  <li>Conduct measurement, debugging, and validation of hardware/firmware integration</li>
-                  <li>Apply power design, signal integrity, and protection principles</li>
-                </ul>
-              </article>
+              </div>
+              <ul class="exp-points">
+                <li>Design PCBs with KiCad, iterate through prototyping and testing</li>
+                <li>Develop firmware for microcontrollers (STM32, RP2040, ESP32)</li>
+                <li>Conduct measurement, debugging, and validation of hardware/firmware integration</li>
+                <li>Apply power design, signal integrity, and protection principles</li>
+              </ul>
+              <div class="project-tags exp-skills">
+                <span class="tag">KiCad</span>
+                <span class="tag">PCB Design</span>
+                <span class="tag">STM32</span>
+                <span class="tag">RP2040</span>
+                <span class="tag">ESP32</span>
+                <span class="tag">Hardware Debugging</span>
+              </div>
+            </article>
             </div>
           </div>
         </section>
@@ -427,45 +431,103 @@
             </div>
 
             <div class="skills-list">
-              <div class="skill-group crosshair-card">
-                <span class="skill-category">Programming Languages</span>
-                <p class="skill-items">C, C++, Python, SystemVerilog, SQL, Shell scripting</p>
+            <div class="skill-group crosshair-card">
+              <span class="skill-category">Programming Languages</span>
+              <div class="project-tags skill-tags">
+                <span class="tag">C</span>
+                <span class="tag">C++</span>
+                <span class="tag">Python</span>
+                <span class="tag">SystemVerilog</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Shell scripting</span>
               </div>
+            </div>
 
-              <div class="skill-group crosshair-card">
-                <span class="skill-category">Microcontrollers &amp; Processors</span>
-                <p class="skill-items">STM32 (G4, H7, L4), RP2040/RP2350, ESP32-C3, ARM Cortex-M, bare-metal HAL</p>
+            <div class="skill-group crosshair-card">
+              <span class="skill-category">Microcontrollers & Processors</span>
+              <div class="project-tags skill-tags">
+                <span class="tag">STM32 (G4, H7, L4)</span>
+                <span class="tag">RP2040/RP2350</span>
+                <span class="tag">ESP32-C3</span>
+                <span class="tag">ARM Cortex-M</span>
+                <span class="tag">bare-metal HAL</span>
               </div>
+            </div>
 
-              <div class="skill-group crosshair-card">
-                <span class="skill-category">FPGA &amp; HDL</span>
-                <p class="skill-items">Spartan-7 FPGA, Vivado/Vitis HLS, SystemVerilog, MicroBlaze soft processor, AXI interconnect</p>
+            <div class="skill-group crosshair-card">
+              <span class="skill-category">FPGA & HDL</span>
+              <div class="project-tags skill-tags">
+                <span class="tag">Spartan-7 FPGA</span>
+                <span class="tag">Vivado/Vitis HLS</span>
+                <span class="tag">SystemVerilog</span>
+                <span class="tag">MicroBlaze soft processor</span>
+                <span class="tag">AXI interconnect</span>
               </div>
+            </div>
 
-              <div class="skill-group crosshair-card">
-                <span class="skill-category">PCB &amp; Hardware Design</span>
-                <p class="skill-items">KiCad (schematic, layout, simulation), power electronics, signal integrity, thermal management, EMI/EMC</p>
+            <div class="skill-group crosshair-card">
+              <span class="skill-category">PCB & Hardware Design</span>
+              <div class="project-tags skill-tags">
+                <span class="tag">KiCad (schematic, layout, simulation)</span>
+                <span class="tag">power electronics</span>
+                <span class="tag">signal integrity</span>
+                <span class="tag">thermal management</span>
+                <span class="tag">EMI/EMC</span>
               </div>
+            </div>
 
-              <div class="skill-group crosshair-card">
-                <span class="skill-category">Communication Interfaces</span>
-                <p class="skill-items">SPI, QSPI, UART, I2C, RS-485, CAN, USB HID, ADC, PWM, GPIO, quadrature encoders</p>
+            <div class="skill-group crosshair-card">
+              <span class="skill-category">Communication Interfaces</span>
+              <div class="project-tags skill-tags">
+                <span class="tag">SPI</span>
+                <span class="tag">QSPI</span>
+                <span class="tag">UART</span>
+                <span class="tag">I2C</span>
+                <span class="tag">RS-485</span>
+                <span class="tag">CAN</span>
+                <span class="tag">USB HID</span>
+                <span class="tag">ADC</span>
+                <span class="tag">PWM</span>
+                <span class="tag">GPIO</span>
+                <span class="tag">quadrature encoders</span>
               </div>
+            </div>
 
-              <div class="skill-group crosshair-card">
-                <span class="skill-category">Robotics &amp; Control Theory</span>
-                <p class="skill-items">Odometry, PID control loops, Pure Pursuit path following, spline generation, particle filter localization, motion planning</p>
+            <div class="skill-group crosshair-card">
+              <span class="skill-category">Robotics & Control Theory</span>
+              <div class="project-tags skill-tags">
+                <span class="tag">Odometry</span>
+                <span class="tag">PID control loops</span>
+                <span class="tag">Pure Pursuit path following</span>
+                <span class="tag">spline generation</span>
+                <span class="tag">particle filter localization</span>
+                <span class="tag">motion planning</span>
               </div>
+            </div>
 
-              <div class="skill-group crosshair-card">
-                <span class="skill-category">Sensors &amp; Peripherals</span>
-                <p class="skill-items">IMU/accelerometers (SPI/I2C), quadrature encoders, magnetometers, pressure sensors, analog multiplexing, noise filtering</p>
+            <div class="skill-group crosshair-card">
+              <span class="skill-category">Sensors & Peripherals</span>
+              <div class="project-tags skill-tags">
+                <span class="tag">IMU/accelerometers (SPI/I2C)</span>
+                <span class="tag">quadrature encoders</span>
+                <span class="tag">magnetometers</span>
+                <span class="tag">pressure sensors</span>
+                <span class="tag">analog multiplexing</span>
+                <span class="tag">noise filtering</span>
               </div>
+            </div>
 
-              <div class="skill-group crosshair-card">
-                <span class="skill-category">Development &amp; Testing</span>
-                <p class="skill-items">Oscilloscope debugging, logic analyzers, real-time measurements, unit testing, version control (Git), embedded debugging</p>
+            <div class="skill-group crosshair-card">
+              <span class="skill-category">Development & Testing</span>
+              <div class="project-tags skill-tags">
+                <span class="tag">Oscilloscope debugging</span>
+                <span class="tag">logic analyzers</span>
+                <span class="tag">real-time measurements</span>
+                <span class="tag">unit testing</span>
+                <span class="tag">version control (Git)</span>
+                <span class="tag">embedded debugging</span>
               </div>
+            </div>
             </div>
           </div>
         </section>

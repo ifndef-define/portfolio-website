@@ -88,28 +88,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Text-Based Bouncing Compilation Loader (~1.8 seconds)
-  const loaderText = document.getElementById('compile-loader-text');
-  const outputResultText = document.getElementById('output-result-text');
+  // Terminal Code Output Container Reference
   const codeOutputContainer = document.getElementById('code-output-container');
-
-  if (loaderText) {
-    const loaderFrames = ['[=---]', '[-=--]', '[--=-]', '[---=]', '[--=-]', '[-=--]'];
-    let frameIdx = 0;
-    loaderText.textContent = loaderFrames[0];
-    const loaderInterval = setInterval(() => {
-      frameIdx = (frameIdx + 1) % loaderFrames.length;
-      loaderText.textContent = loaderFrames[frameIdx];
-    }, 150);
-
-    setTimeout(() => {
-      clearInterval(loaderInterval);
-      loaderText.style.display = 'none';
-      if (outputResultText) {
-        outputResultText.classList.add('is-visible');
-      }
-    }, 1800);
-  }
 
   // Interactive anissh.exe Tab Boot Sequence
   const heroTerminal = document.getElementById('hero-terminal-window');

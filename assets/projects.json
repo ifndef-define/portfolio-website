@@ -1,0 +1,161 @@
+{
+    "projects": [
+        {
+            "title": "Embedded Pac-Man on Spartan-7",
+            "description": "Hardware/software co-design using MicroBlaze soft processor and custom RTL video rendering pipeline for real-time arcade emulation.",
+            "featured": true,
+            "date": {
+                "date_string": "2024",
+                "status": "complete"
+            },
+            "note": {
+                "type": "bad",
+                "message": "Unforunately, the RTL & MicroBlaze source files were corrupted and lost during project demo. Currently rebuilding with an updated hardware pipeline."
+            },
+            "skills": [
+                "FPGA",
+                "MicroBlaze",
+                "SystemVerilog",
+                "C",
+                "VGA"
+            ],
+            "links": [
+                {
+                    "text": "Documentation",
+                    "page": "projects/project-fpga.html",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "title": "Custom Robotics Interface Board",
+            "description": "STM32G474-based custom PCB integrating sensor interfaces, motor drivers, CAN/RS-485 communication, and power regulation.",
+            "featured": true,
+            "date": {
+                "date_string": "Aug 2024",
+                "status": "on-hold"
+            },
+            "note": {
+                "type": "",
+                "message": ""
+            },
+            "skills": [
+                "PCB Design",
+                "KiCad",
+                "STM32G4",
+                "Hardware"
+            ],
+            "links": [
+                {
+                    "text": "Documentation",
+                    "page": "projects/project-pcb.html",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "title": "Advanced Custom Keyboard Platform",
+            "description": "Hall-effect sensing with analog multiplexing and multi-MCU architecture for ultra-low latency input detection and rapid trigger customization.",
+            "featured": true,
+            "date": {
+                "date_string": "",
+                "status": "wip"
+            },
+            "note": {
+                "type": "",
+                "message": ""
+            },
+            "skills": [
+                "Hall Effect",
+                "Analog MUX",
+                "Firmware",
+                "Multi-MCU"
+            ],
+            "links": [
+                {
+                    "text": "Documentation",
+                    "page": "projects/project-keyboard.html",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "title": "VEX Robotics Autonomous Navigation",
+            "description": "Designed and implemented autonomous navigation systems for competition robots using odometry, PID control, Pure Pursuit path following, spline generation, and particle filter localization.",
+            "featured": false,
+            "date": {
+                "date_string": "",
+                "status": "wip"
+            },
+            "note": {
+                "type": "",
+                "message": ""
+            },
+            "skills": [
+                "C++",
+                "Robotics",
+                "Control Theory",
+                "PID"
+            ],
+            "links": []
+        },
+        {
+            "title": "Real-Time Robotics Simulation",
+            "description": "Built a discrete-time simulator for robot dynamics, actuator constraints, and sensor noise. Used for algorithm development and testing before deploying to hardware.",
+            "featured": false,
+            "date": {
+                "date_string": "2023",
+                "status": "complete"
+            },
+            "note": {
+                "type": "",
+                "message": ""
+            },
+            "skills": [
+                "Python",
+                "Simulation",
+                "Physics"
+            ],
+            "links": []
+        },
+        {
+            "title": "Power Electronics & Battery Management",
+            "description": "Explored buck/boost converters, LiPo battery monitoring, coulomb counting, and thermal management circuits. Implemented BMS firmware with cell balancing logic.",
+            "featured": false,
+            "date": {
+                "date_string": "2023",
+                "status": "complete"
+            },
+            "note": {
+                "type": "",
+                "message": ""
+            },
+            "skills": [
+                "PCB",
+                "Power",
+                "Firmware"
+            ],
+            "links": []
+        },
+        {
+            "title": "STM32 HAL and Bare-Metal Exploration",
+            "description": "Deep-dived into ARM Cortex-M interrupt handling, DMA configuration, peripheral clocking, memory protection, and linker scripts. Built from bare registers up to working HAL implementations.",
+            "featured": false,
+            "date": {
+                "date_string": "2023",
+                "status": "complete"
+            },
+            "note": {
+                "type": "",
+                "message": ""
+            },
+            "skills": [
+                "C",
+                "Embedded",
+                "ARM Cortex-M",
+                "Registers"
+            ],
+            "links": []
+        }
+    ]
+}

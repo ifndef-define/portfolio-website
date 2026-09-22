@@ -584,21 +584,10 @@ a:hover, a:focus-visible {
   color: var(--text-secondary);
 }
 
-.compile-loader {
-  color: var(--text-accent);
-  font-weight: 700;
-  margin-top: 0.35rem;
-}
-
 .output-result {
   color: var(--text-accent);
   font-weight: 600;
   margin-top: 0.35rem;
-  display: none;
-}
-
-.output-result.is-visible {
-  display: block;
 }
 
 /* Downstream Content (Immediate render, no delay) */
@@ -678,14 +667,28 @@ a:hover, a:focus-visible {
   padding: 1.35rem 1.45rem;
 }
 
-.project-item.is-featured::before {
+.project-item.is-featured::before,
+.experience-item.is-featured::before {
   border-top-color: var(--gold-border);
   border-bottom-color: var(--gold-border);
 }
 
-.project-item.is-featured::after {
+.project-item.is-featured::after,
+.experience-item.is-featured::after {
   border-left-color: var(--gold-border);
   border-right-color: var(--gold-border);
+}
+
+.project-item.is-featured:hover::before,
+.experience-item.is-featured:hover::before {
+  border-top-color: var(--gold-hover);
+  border-bottom-color: var(--gold-hover);
+}
+
+.project-item.is-featured:hover::after,
+.experience-item.is-featured:hover::after {
+  border-left-color: var(--gold-hover);
+  border-right-color: var(--gold-hover);
 }
 
 .project-topbar {
@@ -712,8 +715,7 @@ a:hover, a:focus-visible {
 }
 
 .project-star.empty {
-  color: var(--text-secondary);
-  opacity: 0.35;
+  display: none;
 }
 
 .project-name {
@@ -774,6 +776,13 @@ a:hover, a:focus-visible {
   color: var(--text-secondary);
 }
 
+.status-completed-text {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #56d364; /* Faint Green */
+  opacity: 0.85;
+}
+
 .project-summary {
   font-size: 0.92rem;
   color: var(--text-secondary);
@@ -800,6 +809,22 @@ a:hover, a:focus-visible {
 
 .note-text {
   color: #d06c66;
+  color: inherit;
+}
+
+.project-system-note-minimal.note-good,
+.project-system-note-minimal.note-good .note-text {
+  color: #56d364; /* Faint Green */
+}
+
+.project-system-note-minimal.note-note,
+.project-system-note-minimal.note-note .note-text {
+  color: #d4af37; /* Faint Yellow */
+}
+
+.project-system-note-minimal.note-bad,
+.project-system-note-minimal.note-bad .note-text {
+  color: #d06c66; /* Faint Red */
 }
 
 .project-tags {
@@ -823,13 +848,18 @@ a:hover, a:focus-visible {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-.project-item.is-featured .tag {
+.project-item.is-featured .tag,
+.experience-item.is-featured .tag {
   border-color: rgba(212, 175, 55, 0.25);
   color: #dfcaa2;
 }
 
 .project-actions {
-  margin-top: 0.25rem;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
 }
 
 .system-link {
@@ -842,11 +872,16 @@ a:hover, a:focus-visible {
 }
 
 .system-link .arrow {
+  display: inline-block;
   transition: transform 0.15s ease;
 }
 
 .system-link:hover .arrow {
   transform: translateX(3px);
+}
+
+.system-link:hover .arrow-external {
+  transform: translate(2px, -2px);
 }
 
 /* ==========================================================================
@@ -882,6 +917,13 @@ a:hover, a:focus-visible {
   font-weight: 700;
   font-size: 1.1rem;
   user-select: none;
+  overflow: hidden;
+}
+
+.exp-icon-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .exp-header-content {
@@ -910,6 +952,31 @@ a:hover, a:focus-visible {
   margin: 0.15rem 0 0;
 }
 
+.exp-org a {
+  color: var(--text-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.15s ease;
+}
+
+.exp-org a:hover {
+  color: var(--text-primary);
+}
+
+.exp-org a .arrow {
+  display: inline-block;
+  font-size: 0.85em;
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+
+.exp-org a:hover .arrow-external {
+  transform: translate(2px, -2px);
+}
+
 .exp-time {
   font-size: 0.82rem;
   font-weight: 600;
@@ -920,11 +987,17 @@ a:hover, a:focus-visible {
 }
 
 .exp-time.is-present {
-  color: #3fb950; /* Terminal Green */
+  color: var(--text-accent); /* Blue matching active in-progress */
 }
 
 .exp-time.is-past {
-  color: var(--text-secondary); /* Gray for completed experiences */
+  color: #56d364; /* Faint green matching completed */
+  opacity: 0.85;
+}
+
+.exp-time.is-past .live-score-line {
+  background: rgba(63, 185, 80, 0.4);
+  opacity: 1;
 }
 
 /* Google Sport Bar Animation (Smooth Bouncing Highlight Across Text Width) */
@@ -964,7 +1037,12 @@ a:hover, a:focus-visible {
 }
 
 .live-score-line.completed {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(63, 185, 80, 0.4);
+}
+
+.live-score-line.on-hold,
+.status-on-hold-text + .live-score-line {
+  background: var(--gold-accent);
 }
 
 .exp-points {
@@ -981,6 +1059,14 @@ a:hover, a:focus-visible {
 
 .exp-points li:last-child {
   margin-bottom: 0;
+}
+
+.exp-skills {
+  margin-top: 0.75rem;
+}
+
+.experience-item:hover .tag {
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* ==========================================================================
@@ -1010,6 +1096,14 @@ a:hover, a:focus-visible {
   font-size: 0.92rem;
   color: var(--text-secondary);
   line-height: 1.6;
+}
+
+.skill-tags {
+  margin-top: 0.4rem;
+}
+
+.skill-group:hover .tag {
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* ==========================================================================
