@@ -12,21 +12,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Header -->
     <header class="site-header">
       <nav class="nav container">
-        <a href="anisshguru.html" class="brand">Anissh<span>.DEV</span></a>
-        <div class="nav-links">
-          <a href="anisshguru.html#about">About</a>
-          <a href="anisshguru.html#projects">Projects</a>
-          <a href="anisshguru.html#experience">Experience</a>
-          <a href="anisshguru.html#skills">Skills</a>
-          <a href="anisshguru.html#contact">Contact</a>
+        <button type="button" class="brand-btn" onclick="window.location.href='anisshguru.html'">[anissh<span>.dev</span>]</button>
+        <button type="button" class="hamburger-btn" id="hamburger-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+        <div class="nav-links" id="nav-links-menu">
+          <a href="anisshguru.html#about">[About]</a>
+          <a href="anisshguru.html#projects">[Projects]</a>
+          <a href="anisshguru.html#experience">[Experience]</a>
+          <a href="anisshguru.html#skills">[Skills]</a>
+          <a href="anisshguru.html#contact">[Contact]</a>
         </div>
       </nav>
     </header>
@@ -35,12 +37,14 @@
       <section class="project-detail-hero">
         <div class="container">
           <a href="anisshguru.html#projects" class="back-link">← Back to Projects</a>
-          <div class="project-detail-header reveal">
+          <div class="project-detail-header">
             <h1>Embedded Pac-Man on Spartan-7</h1>
             <div class="project-tags">
               <span class="tag">FPGA</span>
-              <span class="tag">Embedded</span>
-              <span class="tag">Graphics</span>
+              <span class="tag">MicroBlaze</span>
+              <span class="tag">SystemVerilog</span>
+              <span class="tag">C</span>
+              <span class="tag">VGA</span>
             </div>
           </div>
         </div>
@@ -48,10 +52,11 @@
 
       <section class="project-detail-content">
         <div class="container">
-          <div class="project-detail-main reveal">
-            <article class="detail-section">
-              <div class="project-image-full">
-                <!-- Add project image here -->
+          <div class="project-detail-main">
+            <article class="detail-section crosshair-card">
+              <div class="project-system-note-minimal">
+                <span class="note-icon">⚠</span>
+                <span class="note-text">RTL &amp; MicroBlaze source files were corrupted and lost. Rebuilding with an updated hardware pipeline.</span>
               </div>
 
               <div class="detail-subsection">
@@ -98,7 +103,7 @@
               </div>
 
               <div class="detail-subsection">
-                <h2>Results & Takeaways</h2>
+                <h2>Results &amp; Takeaways</h2>
                 <p>
                   Successfully implemented a fully-functional Pac-Man game running at 60 FPS on the Spartan-7 FPGA. The project 
                   demonstrated how proper hardware/software co-design can achieve real-time performance while keeping power consumption 
@@ -139,26 +144,94 @@
       </section>
     </main>
 
-    <footer class="site-footer">
+    <!-- Footer (Identical to Main Page) -->
+    <footer id="contact" class="site-footer">
       <div class="container footer-inner">
         <div>
-          <p class="eyebrow">More Projects</p>
-          <h3>Explore other work</h3>
-        </div>
-        <div class="footer-links">
-          <a href="anisshguru.html#projects">View All Projects</a>
-          <div class="footer-social">
-            <a href="https://www.linkedin.com/in/anissh-guru/" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a href="https://github.com/ifndef-define" target="_blank" rel="noreferrer">GitHub</a>
+          <p class="section-eyebrow">[05 // TRANSMISSION]</p>
+          <h2 class="footer-title">Let's build something thoughtful.</h2>
+          <p class="footer-subtitle">Open for engineering opportunities and technical collaboration.</p>
+          <div class="footer-cta-row">
+            <button type="button" class="button primary-connect" id="connect-button-footer">Let's Connect</button>
+            <span class="footer-cta-divider">or reach out directly</span>
+            <a id="portfolio-email-contact" class="button secondary">Email</a>
           </div>
         </div>
+
+        <div class="footer-links-group">
+          <div class="footer-nav">
+            <a href="https://www.linkedin.com/in/anissh-guru/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            <a href="https://github.com/ifndef-define" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <a href="https://github.com/ifndef-define/portfolio-website/issues" target="_blank" rel="noreferrer">Report Issue ↗</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="copyright">© <span id="year"></span> Anissh Guruprasad — [anissh.dev] — Systems &amp; Hardware</p>
+          <a class="bot-link" href="summary4bot.html">[ai/bot summary]</a>
+        </div>
       </div>
-      <p class="copyright">© <span id="year"></span> Anissh Guruprasad | Portfolio</p>
     </footer>
 
-    <script>
-      // Set copyright year
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+    <!-- VS Code Styled Recruiter Contact Modal -->
+    <div class="contact-modal" id="contact-modal" aria-hidden="true">
+      <div class="modal-backdrop" data-close-modal></div>
+      <section class="code-editor" role="dialog" aria-modal="true" aria-label="Recruiter contact form">
+        <div class="editor-titlebar">
+          <div class="editor-traffic-lights">
+            <span class="editor-dot dot-red" data-close-modal title="Close"></span>
+            <span class="editor-dot dot-yellow"></span>
+            <span class="editor-dot dot-green"></span>
+          </div>
+          <span class="editor-filename">recruiter_contact.py</span>
+          <button type="button" class="modal-close" aria-label="Close contact form" data-close-modal>&times;</button>
+        </div>
+        <div class="editor-accessibility" aria-label="Accessibility options">
+          <button type="button" class="accessibility-toggle" id="light-mode-toggle" aria-pressed="false">Use light mode</button>
+          <div class="font-size-control">
+            <select id="font-size-select" aria-label="Editor text size">
+              <option value="normal" selected>Normal</option>
+              <option value="large">Large</option>
+              <option value="very-large">Very large</option>
+            </select>
+          </div>
+        </div>
+        <div class="editor-body">
+          <div class="editor-code">
+            <div class="code-line"><span class="line-number">1</span><span class="code-text"><span class="token keyword">import</span> <span class="token type">contact_system</span></span></div>
+            <div class="code-line"><span class="line-number">2</span><span class="code-text"></span></div>
+            <div class="code-line"><span class="line-number">3</span><span class="code-text"><span class="token comment"># Recruiter Contact Interface — Python Form</span></span></div>
+            <div class="code-line"><span class="line-number">4</span><span class="code-text"><span class="token keyword">def</span> <span class="token function">recruiter_contact</span>():</span></div>
+            <div class="code-line"><span class="line-number">5</span><span class="code-text indent-4">candidate = <span class="token string">"Anissh Guruprasad"</span></span></div>
+            <div class="code-line"><span class="line-number">6</span><span class="code-text indent-4">recruiter_name = <span class="token string">"<span class="editable-code-region"><input class="inline-code-input recruiter-name" id="recruiter-name" name="recruiterName" type="text" value="&lt;Recruiter Name&gt;" aria-label="Recruiter name" maxlength="50" autocomplete="name" required /></span>"</span></span></div>
+            <div class="code-line"><span class="line-number">7</span><span class="code-text indent-4">recruiter_email = <span class="token string">"<span class="editable-code-region"><input class="inline-code-input recruiter-email" id="recruiter-email" name="recruiterEmail" type="email" value="&lt;recruiter@company.com&gt;" aria-label="Recruiter email" maxlength="60" autocomplete="email" required /></span>"</span></span></div>
+            <div class="code-line"><span class="line-number">8</span><span class="code-text indent-4">reason_for_contact = <span class="token string">"""<span class="editable-code-region multiline-region"><textarea class="inline-code-textarea recruiter-message" id="recruiter-message" name="recruiterMessage" rows="2" aria-label="Reason for reaching out">&lt;Why you are reaching out / role details&gt;</textarea></span>"""</span></span></div>
+            <div class="code-line"><span class="line-number">9</span><span class="code-text"></span></div>
+            <div class="code-line"><span class="line-number">10</span><span class="code-text indent-4"><span class="token function">contact_system.transmit</span>(</span></div>
+            <div class="code-line"><span class="line-number">11</span><span class="code-text indent-4">    to=candidate,</span></div>
+            <div class="code-line"><span class="line-number">12</span><span class="code-text indent-4">    sender=recruiter_name,</span></div>
+            <div class="code-line"><span class="line-number">13</span><span class="code-text indent-4">    email=recruiter_email,</span></div>
+            <div class="code-line"><span class="line-number">14</span><span class="code-text indent-4">    body=reason_for_contact</span></div>
+            <div class="code-line"><span class="line-number">15</span><span class="code-text indent-4">)</span></div>
+            <div class="code-line"><span class="line-number">16</span><span class="code-text"></span></div>
+            <div class="code-line"><span class="line-number">17</span><span class="code-text"><span class="token keyword">if</span> __name__ == <span class="token string">"__main__"</span>:</span></div>
+            <div class="code-line"><span class="line-number">18</span><span class="code-text indent-4"><span class="token function">recruiter_contact</span>()</span></div>
+          </div>
+          <div class="terminal-divider" aria-hidden="true"></div>
+          <form id="contact-form" novalidate>
+            <div class="terminal-console-bar">
+              <button type="submit" class="send-button">
+                <span class="send-label">Run &gt;</span>
+                <span class="send-loader" aria-hidden="true"></span>
+              </button>
+              <span class="console-cmd">python recruiter_contact.py</span>
+            </div>
+            <p class="email-error" id="email-error" role="alert"></p>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
