@@ -1,5 +1,5 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="is-loading">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,18 +17,43 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="is-loading">
+    <noscript>
+      <style>
+        .site-loader { display: none !important; }
+        html.is-loading, body.is-loading { overflow: auto !important; height: auto !important; max-height: none !important; }
+        body.is-loading * { opacity: 1 !important; transform: none !important; }
+        #header-brand-btn { opacity: 1 !important; }
+      </style>
+    </noscript>
+
+    <!-- Full-Site Initial Loading Sequence -->
+    <div id="site-loader" class="site-loader" aria-hidden="true">
+      <div class="loader-content" id="loader-content">
+        <div class="loader-text-wrap" id="loader-text-wrap">
+          <span class="loader-bracket" id="loader-bracket-open"></span><span class="loader-name" id="loader-name"></span><span class="loader-dotdev" id="loader-dotdev"></span><span class="loader-bracket" id="loader-bracket-close"></span><span class="loader-cursor" id="loader-cursor">_</span>
+        </div>
+      </div>
+    </div>
+
     <!-- Site Navigation with Mobile Hamburger -->
     <header class="site-header">
       <nav class="nav container">
-        <button type="button" class="brand-btn" id="header-brand-btn" aria-label="Anissh.dev easter egg">[anissh<span>.dev</span>]</button>
-        <button type="button" class="hamburger-btn" id="hamburger-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+        <button type="button" class="brand-btn" id="header-brand-btn" aria-label="Anissh.dev easter egg"><span class="brand-bracket">[</span><span class="brand-name">anissh</span><span class="brand-dotdev">.dev</span><span class="brand-bracket">]</span></button>
+        <button type="button" class="hamburger-btn" id="hamburger-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-box" aria-hidden="true">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </span>
+        </button>
         <div class="nav-links" id="nav-links-menu">
           <a href="#about">[About]</a>
           <a href="#projects">[Projects]</a>
           <a href="#experience">[Experience]</a>
           <a href="#skills">[Skills]</a>
           <a href="#contact">[Contact]</a>
+          <span class="nav-indicator" id="nav-indicator" aria-hidden="true"></span>
         </div>
       </nav>
     </header>
@@ -48,10 +73,10 @@
 
           <!-- Typewriter Element with >>> Prompt -->
           <div class="typewriter-wrap">
-            <span class="typewriter-prompt">&gt;&gt;&gt;</span>
-            <span class="typewriter-prefix">I</span>
+            <span class="typewriter-prompt">&gt;</span>
             <span class="typewriter-animated" aria-live="polite">
-              <span class="typewriter-label" id="typewriter-action">build</span>
+              <span class="typewriter-prefix" id="typewriter-prefix">I</span>
+              <span class="typewriter-label" id="typewriter-action">like to build</span>
               <span class="typewriter-text"></span>
             </span>
           </div>
@@ -81,13 +106,10 @@
                 <button type="button" class="terminal-tab-btn is-active" id="tab-portfolio-c" aria-label="View portfolio.c code">
                   <span class="c-file-icon">C</span> portfolio.c
                 </button>
-                <button type="button" class="terminal-tab-btn" id="tab-anissh-exe" aria-label="Run anissh.exe system test">
-                  <span class="exe-file-icon">⚙</span> cool_idea.exe
-                </button>
               </div>
             </div>
             
-            <!-- Tab 1 Body: portfolio.c -->
+            <!-- Tab Body: portfolio.c -->
             <div class="terminal-body" id="terminal-body-c">
               <pre><code><span class="token keyword">#ifndef</span> <span class="token type">GROWING_ENGINEER</span>
 <span class="token keyword">#define</span> <span class="token type">GROWING_ENGINEER</span>
@@ -111,11 +133,6 @@
 
 <span class="token function">printf</span>(<span>to_resume(&me, &new_engineer) + </span><span class="token string">"\n"</span>);
 <span class="token keyword">#endif</span> <span class="token comment">// GROWING_ENGINEER</span></code></pre>
-            </div>
-
-            <!-- Tab 2 Body: anissh.exe (Fast Typewriter & Delayed Kernel Panic) -->
-            <div class="terminal-body" id="terminal-body-exe" style="display: none;">
-              <pre class="kernel-panic-screen"><code id="exe-console-text"></code></pre>
             </div>
           </div>
 
