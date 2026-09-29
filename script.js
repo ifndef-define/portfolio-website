@@ -152,7 +152,7 @@ const definitelyNotAnEmail = `${word}${sigma}${something}${yeet}${ball}${yes}${t
 // - PLAY_ONCE_PER_SESSION: Set to true if you only want it to run once per session
 //   instead of on every refresh.
 // ============================================================================
-const ENABLE_INTRO = false;
+const ENABLE_INTRO = true;
 const PLAY_ONCE_PER_SESSION = false;
 const INTRO_SESSION_KEY = 'anissh_portfolio_intro_seen';
 
