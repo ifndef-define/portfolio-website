@@ -1,0 +1,7 @@
+# Project Inspiration
+The funny origin of this project, was that as I was looking for internships, my brother suggested that I should apply to Wooting, the keyboard company. I thought about it and decided to make my own custom keyboard, but with a twist. I came up with the idea of making a keyboard that would have customizable screens, replacing the function row, and one on the left side of the keyboard as a touchscreen to be used for macros and for controlling the keyboard. I thought this would be a fun project to work on, and it would also be a great way to learn more about electronics and programming.
+
+## Initial Design and Research
+Designing the board was simple enough, I wanted to keep a roughly 75% layout, with the function row replaced with a screen, dedicated arrow, media, and navigation keys, and the have the left side screen be a touchscreen. The first problem was I could not find a display that would fit the size of function key row at about 1.5 inches tall and 12 inches wide. Instead, I found a 1.5 inch tall and 3 inch wide display that I could fit three groups of four keys, to match the standard layout of the function row. This brings the total number of displays to four. 
+
+When I started planning what I wanted in this keyboard and how I would get the screens to work, I realized that I would need to use massive development boards or extremely expensive ASICs to get the screens to work in the way I wanted.

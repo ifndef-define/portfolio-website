@@ -1,0 +1,78 @@
+{
+    "experiences": [
+        {
+            "title": "Programming Team Lead",
+            "company": {
+                "name": "Illini VEX Robotics",
+                "url": "https://illinivexu.web.illinois.edu/"
+            },
+            "date": {
+                "date_start": "Aug 2023",
+                "date_end": "Dec 2025",
+                "status": "past"
+            },
+            "image": "assets/block_i.png",
+            "work": [
+                "Led software development for 4+ competitive robots and mentored 10+ programmers",
+                "Developed autonomous navigation using Pure Pursuit, PID, and odometry.",
+                "Improved autonomous reliability through iterative testing, tuning, and debugging.",
+                "Collaborated across mechanical and software teams to improve robot integration and prototype mechanisms."
+            ],
+            "skills": [
+                "C++",
+                "Odometry",
+                "PID Control",
+                "Path Following",
+                "Team Leadership"
+            ]
+        },
+        {
+            "title": "Event Partner",
+            "company": {
+                "name": "Illini VEX Robotics",
+                "url": "https://illinivexu.web.illinois.edu/"
+            },
+            "date": {
+                "date_start": "Dec 2024",
+                "date_end": "",
+                "status": "present"
+            },
+            "image": "assets/block_i.png",
+            "work": [
+                "Lead and hosted 6+ regional tournaments with 30+ teams each",
+                "Coordinated 50+ volunteers across judging, training, and logistics",
+                "Managed tournament flow, finances, scoring systems, and livestream infrastructure"
+            ],
+            "skills": [
+                "Event Operations",
+                "Volunteer Coordination",
+                "Logistics",
+                "Financial Management",
+                "Livestreaming",
+                "Networking"
+            ]
+        },
+        {
+            "title": "Treasurer",
+            "company": {
+                "name": "Illini VEX Robotics",
+                "url": "https://illinivexu.web.illinois.edu/"
+            },
+            "date": {
+                "date_start": "Aug 2026",
+                "date_end": "",
+                "status": "present"
+            },
+            "image": "assets/block_i.png",
+            "work": [
+                "Spearheading the financial management of a student organization with 100+ members and $10,000+ in annual budget",
+                "Developing automated financial requests and reporting systems across origination departments"
+            ],
+            "skills": [
+                "Financial Management",
+                "Budgeting",
+                "Nonprofit Operations"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,69 @@
+{
+    "skills": {
+        "Software Development": [
+            "C",
+            "C++",
+            "Python",
+            "Java",
+            "JavaScript",
+            "HTML/CSS",
+            "SystemVerilog",
+            "SQL",
+            "Shell scripting",
+            "Git/GitHub Version Control"
+        ],
+        "Microcontrollers & Processors": [
+            "RP2350",
+            "ESP32-C3"
+        ],
+        "FPGA & HDL": [
+            "Spartan-7 FPGA",
+            "Vivado/Vitis HLS",
+            "SystemVerilog",
+            "MicroBlaze soft processor",
+            "AXI interconnect",
+            "Testbenche & Simulation"
+        ],
+        "PCB & Hardware Design": [
+            "KiCad (schematic, layout, routing)",
+            "High-speed digital design",
+            "Power distribution & decoupling",
+            "Keysight Oscilloscope"
+        ],
+        "Communication Interfaces": [
+            "SPI",
+            "QSPI",
+            "UART",
+            "I2C",
+            "RS-485",
+            "USB HID"
+        ],
+        "Robotics & Control Theory": [
+            "Odometry",
+            "PID control loops",
+            "Pure Pursuit",
+            "Path Following",
+            "Spline generation",
+            "Motion Planning"
+        ],
+        "Mechanical Design & Fabrication": [
+            "3D Printing (FDM)",
+            "Laser Cutting",
+            "CNC Milling",
+            "CAD (Fusion 360)"
+        ],
+        "Leadership" : [
+            "Team Leadership",
+            "Cross-functional Collaboration",
+            "Event Operations",
+            "Volunteer Coordination",
+            "Logistics",
+            "Finance Management"
+        ],
+        "Other Skills": [
+            "Livestreaming",
+            "Premiere Pro Video Editing",
+            "Desktop PC Building"
+        ]
+    }
+}

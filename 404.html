@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404: High-Z Fault | Anissh Guruprasad</title>
+    <meta
+      name="description"
+      content="404: Address pin floating in High-Impedance (High-Z). Return to main site."
+    />
+    <link rel="icon" type="image/x-icon" href="assets/AG_Logo.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #090c10;
+        --text-primary: #f0f6fc;
+        --text-secondary: #8b949e;
+        --text-accent: #58a6ff;
+        --text-code-string: #ffadb3;
+        --fault-red: #ff7b72;
+        --border: rgba(255, 255, 255, 0.12);
+        --font-mono: "Cascadia Code", "JetBrains Mono", Menlo, Consolas, monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: var(--bg);
+        color: var(--text-primary);
+        font-family: var(--font-mono);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        padding: 1.5rem 1rem;
+        overflow-x: hidden;
+      }
+
+      /* Header Brand */
+      .site-header {
+        width: 100%;
+        max-width: 650px;
+        display: flex;
+        justify-content: flex-start;
+      }
+
+      .brand-btn {
+        background: transparent;
+        border: 0;
+        color: var(--text-primary);
+        font-family: var(--font-mono);
+        font-size: 0.95rem;
+        text-decoration: none;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        transition: opacity 0.2s ease;
+      }
+
+      .brand-btn:hover {
+        opacity: 0.8;
+      }
+
+      .brand-bracket { color: var(--text-code-string); }
+      .brand-name { color: #fff; font-weight: 700; }
+      .brand-dotdev { color: var(--text-accent); }
+
+      /* Centered Stage */
+      .stage {
+        max-width: 520px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto 0;
+        padding: 2rem 0;
+      }
+
+      .eyebrow {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        color: var(--fault-red);
+        margin-bottom: 0.75rem;
+        text-transform: uppercase;
+      }
+
+      .title {
+        font-size: clamp(2.2rem, 5.5vw, 3rem);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.15;
+        margin-bottom: 1rem;
+      }
+
+      .title .high-z {
+        color: var(--fault-red);
+      }
+
+      .message {
+        font-size: 0.98rem;
+        line-height: 1.65;
+        color: var(--text-secondary);
+        margin-bottom: 2.25rem;
+      }
+
+      .message strong {
+        color: var(--text-primary);
+      }
+
+      /* Return Button */
+      .button-return {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        font-family: var(--font-mono);
+        font-size: 0.92rem;
+        font-weight: 600;
+        padding: 0.75rem 1.6rem;
+        border-radius: 2px;
+        cursor: pointer;
+        text-decoration: none;
+        background: var(--text-accent);
+        color: #090c10;
+        border: 1px solid var(--text-accent);
+        transition: all 0.2s ease;
+      }
+
+      .button-return:hover {
+        background: #79c0ff;
+        border-color: #79c0ff;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 14px rgba(88, 166, 255, 0.25);
+      }
+
+      .button-return:focus-visible {
+        outline: 2px dashed #ffffff;
+        outline-offset: 4px;
+      }
+
+      /* Footer */
+      .site-footer {
+        font-size: 0.75rem;
+        color: var(--text-secondary);
+        margin-top: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Header -->
+    <header class="site-header">
+      <a href="index.html" class="brand-btn" aria-label="Return home">
+        <span class="brand-bracket">[</span><span class="brand-name">anissh</span><span class="brand-dotdev">.dev</span><span class="brand-bracket">]</span>
+      </a>
+    </header>
+
+    <!-- Centered Clean 404 Stage -->
+    <main class="stage">
+      <p class="eyebrow">[0x404 // BUS FAULT: HIGH-Z]</p>
+      <h1 class="title">404: Undefined Node in <span class="high-z">High-Z</span></h1>
+      <p class="message">
+        The requested address is floating at <strong>high impedance</strong>.
+        The processor sampled undefined logic and crashed.
+      </p>
+
+      <a href="index.html" class="button-return">
+        Reset MCU to main site &rarr;
+      </a>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> Anissh Guruprasad</p>
+    </footer>
+
+    <script>
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      function triggerResetIntro() {
+        try {
+          sessionStorage.setItem('portfolio_force_intro', 'true');
+          sessionStorage.removeItem('portfolio_from_subpage');
+          sessionStorage.removeItem('anissh_portfolio_intro_seen');
+        } catch (e) {}
+      }
+
+      const returnBtn = document.querySelector('.button-return');
+      if (returnBtn) {
+        returnBtn.addEventListener('click', triggerResetIntro);
+      }
+
+      const brandBtn = document.querySelector('.brand-btn');
+      if (brandBtn) {
+        brandBtn.addEventListener('click', triggerResetIntro);
+      }
+
+      console.warn(
+        "%c[HARDFAULT 0x404]: Bus line sampled in High-Z (infinite impedance). Floating node.",
+        "color: #ff7b72; font-weight: bold;"
+      );
+    </script>
+  </body>
+</html>
