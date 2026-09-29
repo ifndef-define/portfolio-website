@@ -1,0 +1,10 @@
+{
+    "liveServer.settings.root": "/",
+    "liveServer.settings.file": "/anisshguru.html",
+    "liveServer.settings.ignoreFiles": [
+        ".vscode/**",
+        "**/*.md",
+        "**/*.txt",
+        "**/*.json"
+  ]
+}

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RP2350 TFT Display Driver | Anissh Guruprasad</title>
+    <meta
+      name="description"
+      content="Currently developing custom hardware and software for a TFT display using dual RP2350 microcontrollers, one for driving the display and one for managing the display content and other peripherals. Planned for use in a custom keyboard project, with future applications in robotics and other embedded systems."
+    />
+    <link rel="icon" type="image/x-icon" href="../assets/AG_Logo.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <nav class="nav container">
+        <button type="button" class="brand-btn" onclick="window.location.href='../index.html'" aria-label="Back to home"><span class="brand-bracket">[</span><span class="brand-name">anissh</span><span class="brand-dotdev">.dev</span><span class="brand-bracket">]</span></button>
+        <button type="button" class="hamburger-btn" id="hamburger-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-box" aria-hidden="true">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </span>
+        </button>
+        <div class="nav-links" id="nav-links-menu">
+          <a href="../index.html#about">[About]</a>
+          <a href="../index.html#projects">[Projects]</a>
+          <a href="../index.html#experience">[Experience]</a>
+          <a href="../index.html#skills">[Skills]</a>
+          <a href="../index.html#contact">[Contact]</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="project-detail-hero">
+        <div class="container">
+          <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+          <div class="project-detail-header">
+            <h1>RP2350 TFT Display Driver</h1>
+            <div class="project-tags">
+              <span class="tag">RP2350</span>
+              <span class="tag">TFT Display</span>
+              <span class="tag">Embedded Systems</span>
+              <span class="tag">C</span>
+              <span class="tag">PCB Design</span>
+              <span class="tag">KiCad</span>
+              <span class="tag">High-Speed Digital Design</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-detail-content">
+        <div class="container">
+          <div class="project-detail-main">
+            <article class="detail-section crosshair-card">
+              <div class="project-system-note-minimal note-good">
+                <span class="note-icon">✓</span>
+                <span class="note-text">Currently working on a development board with dual RP2350 MCUs, along with wireless communication.</span>
+              </div>
+
+              <div class="detail-subsection">
+                <h2>Project Inspiration</h2>
+                <p>
+                  The funny origin of this project came during my search for internships. My brother suggested that I should apply to Wooting. I thought about it and decided to make my own custom keyboard as a showpiece, but with a twist. I came up with the idea of making a keyboard that would have customizable screens, replacing the function row, and one on the left side of the keyboard as a touchscreen to be used for macros and for controlling the keyboard. I thought this would be a fun project to work on, and it would also be a great way to learn more about electronics and programming.
+                </p>
+                <h3>Initial Design and Research</h3>
+                <p>
+                  Designing the board was simple enough; I wanted to keep a roughly 75% layout, with the function row replaced with a screen, dedicated arrow, media, and navigation keys, and the have the left side screen be a touchscreen. The first problem was I could not find a display that would fit the size of function key row at about 1.5 inches tall and 12 inches wide. Instead, I found a 1.5 inch tall and 3 inch wide display that I could fit three groups of four keys, to match the standard layout of the function row. This brings the total number of displays to four.
+                </p>
+              <figure class="project-figure">
+                  <img src="../assets/keyboard_concept.png" alt="Keyboard Sketch" />
+                  <figcaption>Keyboard Sketch</figcaption>
+              </figure>
+                <p>
+                  In order to drive the screens themselves, I found that I would need to use massive development boards that simply wouldn't fit in the keyboard space, or utilise extremely expensive ASICs that could drive the screens. So after some research, I found that the best solution would be to use a Raspberry Pi RP2350B. This particular MCU has PIO (Programmable Input/Output) blocks that can be used to drive the high-speed RGB and timing signals required for the displays, without running on software. This would free the dual-core ARM Cortex-M0+ to handle running the display using the LVGL (Light and Versatile Graphics Library) on one core, while the other core handles input processing and communication with a the master keyboard MCU, which conveiniently, is also a RP2350B.
+                </p>
+                <p>
+                  This master-satellite architecture would allow for the displays to be driven by a dedicated MCU, while the master MCU handles the keyboard input, communication with the computer, and directs the 4 displays via a state machine of some sort.
+                </p>
+                <h3>So where to start?</h3>
+                <p>
+                  Now this is an ambitious project for me as this would be my first high-speed digital design, and I have never worked with TFT displays before, ontop of designing the necessary MCU and supporting circuitry to house the microcontrollers. So I decided to start with the displays themselves, as this is a fundemental part of the project.
+                </p>
+                <p>
+                  In order to be able to create the firmware for the RP2350B that would drive the displays, I would need to first build a development test board that would allow me to test the PIO blocks and the master to satellite communication. I would also need to be able to test the displays themselves, and make sure that they are able to output the correct graphics with no tearing, flickering, or other artifacts.
+                </p>
+                <h3>What I have designed so far</h3>
+                <p>
+                  I am currently working on designing the test board, which will be a small PCB that will house two RP2350B MCUs, and the necessary circuitry to drive the displays, a RP-RM2 module, independent USB-C per MCU, redundant serial wire debugging, and many test points to be able to probe the signals and make sure that everything is working correctly.
+                </p>
+              <figure class="project-figure">
+                  <img src="../assets/mcu_tft_schematic.png" alt="Test Board In-Progress Schematic" />
+                  <figcaption>Test Board In-Progress Schematic</figcaption>
+              </figure>
+                <h3>What&#x27;s next?</h3>
+                <p>
+                  The primary goal is to get this test board designed, fabricated, and assembled in the next month or so, and then start working on developing the firmware for the RP2350B MCUs to drive the displays and communicate with each other. This I anticipate will take another month or so, as I will need to learn how to actually use the PIO blocks, drive the displays, and implement a custom driver to go from the rendered framebuffer to the PIO blocks, and then to the displays themselves.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-nav">
+        <div class="container">
+          <p>← <a href="../index.html#projects">Back to all projects</a></p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer (Identical to Main Page) -->
+    <footer id="contact" class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <p class="section-eyebrow">[<span class="eyebrow-addr">0xF0 - 0xFF</span> // <span class="eyebrow-title">TRANSMISSION</span>]</p>
+          <h2 class="footer-title">Let's build something thoughtful.</h2>
+          <p class="footer-subtitle">Open for engineering opportunities and technical collaboration.</p>
+          <div class="footer-cta-row">
+            <button type="button" class="button primary-connect" id="connect-button-footer">Let's Connect</button>
+            <span class="footer-cta-divider">or reach out directly</span>
+            <a id="portfolio-email-contact" class="button secondary">Email</a>
+          </div>
+        </div>
+
+        <div class="footer-links-group">
+          <div class="footer-nav">
+            <a href="https://www.linkedin.com/in/anissh-guru/" target="_blank" rel="noreferrer">
+              <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="2" r="2"/></svg>
+              <span>LinkedIn</span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a>
+            <a href="https://github.com/ifndef-define" target="_blank" rel="noreferrer">
+              <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              <span>GitHub</span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a>
+            <a href="https://github.com/ifndef-define/portfolio-website/issues" target="_blank" rel="noreferrer">
+              <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <span>Report Issue</span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="copyright">&copy; <span id="year"></span> Anissh Guruprasad &mdash; <a href="https://github.com/ifndef-define/portfolio-website" target="_blank" rel="noreferrer">Site source code</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- VS Code Styled Recruiter Contact Modal -->
+    <div class="contact-modal" id="contact-modal" aria-hidden="true">
+      <div class="modal-backdrop" data-close-modal></div>
+      <section class="code-editor" role="dialog" aria-modal="true" aria-label="Recruiter contact form">
+        <div class="editor-titlebar">
+          <div class="editor-traffic-lights">
+            <span class="editor-dot dot-red" data-close-modal title="Close"></span>
+            <span class="editor-dot dot-yellow"></span>
+            <span class="editor-dot dot-green"></span>
+          </div>
+          <span class="editor-filename">recruiter_contact.py</span>
+          <button type="button" class="modal-close" aria-label="Close contact form" data-close-modal>&times;</button>
+        </div>
+        <div class="editor-accessibility" aria-label="Accessibility options">
+          <button type="button" class="accessibility-toggle" id="light-mode-toggle" aria-pressed="false">Use light mode</button>
+          <div class="font-size-control">
+            <select id="font-size-select" aria-label="Editor text size">
+              <option value="normal" selected>Normal</option>
+              <option value="large">Large</option>
+              <option value="very-large">Very large</option>
+            </select>
+          </div>
+        </div>
+        <div class="editor-body">
+          <div class="editor-code">
+            <div class="code-line" id="import-contact-system" title="Triple-click for debug mode"><span class="line-number">1</span><span class="code-text"><span class="token keyword">import</span> <span class="token type">contact_system</span></span></div>
+            <div class="code-line"><span class="line-number">2</span><span class="code-text"></span></div>
+            <div class="code-line"><span class="line-number">3</span><span class="code-text"><span class="token comment"># Recruiter Contact Interface — Sends directly to me</span></span></div>
+            <div class="code-line"><span class="line-number">4</span><span class="code-text"><span class="token comment"># Feel free to use this form, or directly reach out via email</span></span></div>
+            <div class="code-line"><span class="line-number">5</span><span class="code-text"><span class="token keyword">def</span> <span class="token function">recruiter_contact</span>():</span></div>
+            <div class="code-line"><span class="line-number">6</span><span class="code-text indent-4">candidate = <span class="token string">"Anissh Guruprasad"</span></span></div>
+            <div class="code-line"><span class="line-number">7</span><span class="code-text indent-4">recruiter_name = <span class="token string">"<span class="editable-code-region"><input class="inline-code-input recruiter-name" id="recruiter-name" name="recruiterName" type="text" value="&lt;Recruiter Name&gt;" aria-label="Recruiter name" maxlength="50" autocomplete="name" required /></span>"</span></span></div>
+            <div class="code-line"><span class="line-number">8</span><span class="code-text indent-4">recruiter_email = <span class="token string">"<span class="editable-code-region"><input class="inline-code-input recruiter-email" id="recruiter-email" name="recruiterEmail" type="email" value="&lt;recruiter@company.com&gt;" aria-label="Recruiter email" maxlength="60" autocomplete="email" required /></span>"</span></span></div>
+            <div class="code-line"><span class="line-number">9</span><span class="code-text indent-4">reason_for_contact = <span class="token string">"""<span class="editable-code-region multiline-region"><textarea class="inline-code-textarea recruiter-message" id="recruiter-message" name="recruiterMessage" rows="2" aria-label="Reason for reaching out">&lt;Why you are reaching out / role details&gt;</textarea></span>"""</span></span></div>
+            <div class="code-line"><span class="line-number">10</span><span class="code-text"></span></div>
+            <div class="code-line"><span class="line-number">11</span><span class="code-text indent-4"><span class="token function">contact_system.transmit</span>(</span></div>
+            <div class="code-line"><span class="line-number">12</span><span class="code-text indent-4">    to=candidate,</span></div>
+            <div class="code-line"><span class="line-number">13</span><span class="code-text indent-4">    sender=recruiter_name,</span></div>
+            <div class="code-line"><span class="line-number">14</span><span class="code-text indent-4">    email=recruiter_email,</span></div>
+            <div class="code-line"><span class="line-number">15</span><span class="code-text indent-4">    body=reason_for_contact</span></div>
+            <div class="code-line"><span class="line-number">16</span><span class="code-text indent-4">)</span></div>
+            <div class="code-line"><span class="line-number">17</span><span class="code-text"></span></div>
+            <div class="code-line"><span class="line-number">18</span><span class="code-text"><span class="token keyword">if</span> __name__ == <span class="token string">"__main__"</span>:</span></div>
+            <div class="code-line"><span class="line-number">19</span><span class="code-text indent-4"><span class="token function">recruiter_contact</span>()</span></div>
+          </div>
+          <div class="terminal-divider" aria-hidden="true"></div>
+          <form id="contact-form" novalidate>
+            <input type="checkbox" name="botcheck" id="botcheck" class="code-param-opt" tabindex="-1" autocomplete="off" />
+            <div class="terminal-console-bar">
+              <button type="submit" class="send-button">
+                <span class="send-label">Run &gt;</span>
+                <span class="send-loader" aria-hidden="true"></span>
+              </button>
+              <span class="console-cmd">python recruiter_contact.py</span>
+            </div>
+            <p class="email-error" id="email-error" role="alert"></p>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

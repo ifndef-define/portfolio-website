@@ -1,0 +1,182 @@
+{
+    "projects": [
+        {
+            "title": "Embedded Pac-Man on Xilinx Spartan-7",
+            "description": "Final project for ECE 385 (Digital Systems Lab) at UIUC. Created a hardware/software co-design using the MicroBlaze soft processor and a custom video rendering pipeline to implement a playable arcade-style Pac-Man game on a Xilinx Spartan-7 FPGA.",
+            "featured": true,
+            "date": {
+                "date_string": "Dec 2025",
+                "status": "on-hold"
+            },
+            "note": {
+                "type": "bad",
+                "message": "Unforunately, the Verilog & MicroBlaze source files were corrupted and lost during project demo. Planning to rebuild the project with more robust design principles."
+            },
+            "skills": [
+                "FPGA",
+                "MicroBlaze",
+                "SystemVerilog",
+                "C",
+                "VGA",
+                "HDMI",
+                "AXI4",
+                "Vivado 2022",
+                "Urbana Board"
+            ],
+            "links": [
+                {
+                    "text": "What Happened?",
+                    "page": "projects/project-fpga.html",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "title": "RP2350 TFT Display Driver",
+            "description": "Currently developing custom hardware and software for a TFT display using dual RP2350 microcontrollers, one for driving the display and one for managing the display content and other peripherals. Planned for use in a custom keyboard project, with future applications in robotics and other embedded systems.",
+            "featured": true,
+            "date": {
+                "date_string": "",
+                "status": "wip"
+            },
+            "note": {
+                "type": "good",
+                "message": "Currently working on a development board with dual RP2350 MCUs, along with wireless communication."
+            },
+            "skills": [
+                "RP2350",
+                "TFT Display",
+                "Embedded Systems",
+                "C",
+                "PCB Design",
+                "KiCad",
+                "High-Speed Digital Design"
+            ],
+            "links": [
+                {
+                    "text": "See my Progress",
+                    "page": "projects/project-mcutft.html",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "title": "ESP32 Smart Garage Door Controller",
+            "description": "Developing a smart garage door controller using an ESP32 microcontroller, with features such as remote access, status monitoring, and integration as a Matter device with Google Home.",
+            "featured": true,
+            "date": {
+                "date_string": "",
+                "status": "wip"
+            },
+            "note": {
+                "type": "good",
+                "message": "The PCB has been designed and fabricated. Currently working on the firmware and Matter integration."
+            },
+            "skills": [
+                "ESP32",
+                "IoT",
+                "C++",
+                "Home Automation",
+                "KiCad",
+                "PCB Design",
+                "Embedded Systems"
+            ],
+            "links": [
+                {
+                    "text": "See my Progress",
+                    "page": "projects/project-smartgarage.html",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "title": "PWM Fan Controller PCB",
+            "description": "Designed and fabricated a custom PCB for controlling standard 3 and 4-pin PWM fans using a 555 timer and a MOSFET. The PCB is designed to be used in a custom fume hood for my soldering station.",
+            "featured": false,
+            "date": {
+                "date_string": "Aug 2026",
+                "status": "on-hold"
+            },
+            "note": {
+                "type": "good",
+                "message": "The PCB was successfully fabricated and tested. Now working on designing a custom enclosure for the PCB and fans to be used in my soldering station."
+            },
+            "skills": [
+                "KiCad",
+                "PCB Design",
+                "555 Timer"
+            ],
+            "links": []
+        },
+        {
+            "title": "VEX TM Utility Library & Steam Integration",
+            "description": "Developing a Python library for VEX TM robotics to abstract the complexity of the VEX Tournament Manager software for other developers and event partners to easily develop custom applications for VEX TM robotics competitions. Additionally, developing a live streaming integration for VEX TM robotics competitions to allow for easier automation of live streaming and event management.",
+            "featured": false,
+            "date": {
+                "date_string": "June 2026",
+                "status": "on-hold"
+            },
+            "note": {
+                "type": "note",
+                "message": "API keys have been expired since June. Still awaiting a response from VEX Robotics to renew the API keys and continue development."
+            },
+            "skills": [
+                "Python",
+                "API Development",
+                "Live Streaming",
+                "OBS",
+                "Websockets",
+                "Software Development"
+            ],
+            "links": []
+        },
+        {
+            "title": "RFID Based Attendance System",
+            "description": "Developed a custom RFID-based attendance system for a student organization to automate attendance tracking and reporting. The system used a Raspberry Pi and RFID readers to scan RFID tags paired with a custom Discord bot to notify members of their attendance.",
+            "featured": false,
+            "date": {
+                "date_string": "",
+                "status": "wip"
+            },
+            "note": {
+                "type": "none",
+                "message": ""
+            },
+            "skills": [
+                "Python",
+                "Raspberry Pi",
+                "MFRC522",
+                "RFID",
+                "Linux",
+                "Discord API"
+            ],
+            "links": []
+        },
+        {
+            "title": "Custom Robotics Interface Board",
+            "description": "Learned how to design custom PCBs using KICad by designing a STM32G474-based custom PCB integrating encoder interfaces, RS485 communication, and power regulation, with Raspberry Pi communication for autonomous robotics applications.",
+            "featured": false,
+            "date": {
+                "date_string": "April 2026",
+                "status": "completed"
+            },
+            "note": {
+                "type": "note",
+                "message": "This board was only a prototype for learning PCB design and was not used in any robotics applications."
+            },
+            "skills": [
+                "PCB Design",
+                "KiCad",
+                "STM32G4",
+                "Hardware Design"
+            ],
+            "links": [
+                {
+                    "text": "See Designs",
+                    "page": "projects/project-learnpcb.html",
+                    "url": ""
+                }
+            ]
+        }
+    ]
+}

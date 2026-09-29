@@ -1,18 +1,735 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio Website</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@300;400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="container">
-        <h1>Welcome to anissh.dev</h1>
-        <p class="welcome">The digital portfolio of Anissh Guruprasad!</p>
-        <p class="update">This website is currently under construction. Stay tuned for updates!</p>
+<html lang="en" class="is-loading">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anissh Guruprasad | Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio website for Anissh Guruprasad — Hardware/Software engineer focused on embedded systems, robotics, and low-level engineering."
+    />
+    <meta property="og:title" content="Anissh Guruprasad | Portfolio" />
+    <meta
+      property="og:description"
+      content="Hardware and software engineering portfolio focused on embedded systems, robotics, and low-level engineering."
+    />
+    <meta property="og:image" content="https://anissh.dev/assets/AG_Logo.ico" />
+    <meta property="og:url" content="https://anissh.dev/index.html" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Anissh Guruprasad | Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Hardware and software engineering portfolio focused on embedded systems, robotics, and low-level engineering."
+    />
+    <meta name="twitter:image" content="https://anissh.dev/assets/AG_Logo.ico" />
+    <link rel="icon" type="image/x-icon" href="assets/AG_Logo.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="is-loading">
+    <noscript>
+      <style>
+        .site-loader { display: none !important; }
+        html.is-loading, body.is-loading { overflow: auto !important; height: auto !important; max-height: none !important; }
+        body.is-loading * { opacity: 1 !important; transform: none !important; }
+        #header-brand-btn { opacity: 1 !important; }
+      </style>
+    </noscript>
+
+    <!-- Full-Site Initial Loading Sequence -->
+    <div id="site-loader" class="site-loader" aria-hidden="true">
+      <div class="loader-content" id="loader-content">
+        <div class="loader-text-wrap" id="loader-text-wrap">
+          <span class="loader-bracket" id="loader-bracket-open"></span><span class="loader-name" id="loader-name"></span><span class="loader-dotdev" id="loader-dotdev"></span><span class="loader-bracket" id="loader-bracket-close"></span><span class="loader-cursor" id="loader-cursor">_</span>
+        </div>
+      </div>
     </div>
+
+    <header class="site-header">
+      <nav class="nav container">
+        <button type="button" class="brand-btn" id="header-brand-btn" aria-label="Anissh.dev easter egg"><span class="brand-bracket">[</span><span class="brand-name">anissh</span><span class="brand-dotdev">.dev</span><span class="brand-bracket">]</span></button>
+        <button type="button" class="hamburger-btn" id="hamburger-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-box" aria-hidden="true">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </span>
+        </button>
+        <div class="nav-links" id="nav-links-menu">
+          <a href="#about">[About]</a>
+          <a href="#projects">[Projects]</a>
+          <a href="#experience">[Experience]</a>
+          <a href="#skills">[Skills]</a>
+          <a href="#contact">[Contact]</a>
+          <span class="nav-indicator" id="nav-indicator" aria-hidden="true"></span>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="container">
+          <!-- Section Micro Header with Version Tag -->
+          <div class="hero-eyebrow-row">
+            <p class="section-eyebrow">[<span class="eyebrow-addr">0x00 - 0x1F</span> // <span class="eyebrow-title">SYSTEM OVERVIEW</span>]</p>
+            <span class="identity-tag">[v09.28.2026]</span>
+          </div>
+
+          <!-- Identity Header -->
+          <div class="identity-header">
+            <h1>Anissh Guruprasad</h1>
+          </div>
+
+          <!-- Typewriter Element with >>> Prompt -->
+          <div class="typewriter-wrap">
+            <span class="typewriter-prompt">&gt;</span>
+            <span class="typewriter-animated" aria-live="polite">
+              <span class="typewriter-prefix" id="typewriter-prefix">I</span>
+              <span class="typewriter-label" id="typewriter-action">like to build</span>
+              <span class="typewriter-text"></span>
+            </span>
+          </div>
+
+          <!-- Introductory Summary -->
+          <p class="hero-bio">
+            <strong>Hands on engineering</strong>, this is my passion. I'm a <strong>Computer Engineer at UIUC</strong> focused on 
+            embedded systems, robotics, and hardware/software co-design. 
+            I'm <strong>ready</strong> to take on a role where I can <strong>keep learning</strong>, <strong>contribute</strong> to real systems, and <strong>grow</strong> across hardware and software.
+          </p>
+
+          <!-- Prominent Blue Call to Action Buttons -->
+          <div class="cta-row">
+            <button type="button" class="button primary-connect" id="connect-button">Let's Connect</button>
+            <a href="#projects" class="button secondary">View Projects</a>
+          </div>
+
+          <!-- C-Code Terminal Window (~58% Centered Default Width) -->
+          <div class="terminal-window crosshair-card" id="hero-terminal-window">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="terminal-tabbar">
+                <button type="button" class="terminal-tab-btn is-active" id="tab-portfolio-c" aria-label="View portfolio.c code">
+                  <span class="c-file-icon">C</span> portfolio.c
+                </button>
+              </div>
+            </div>
+            
+            <!-- Tab Body: portfolio.c -->
+            <div class="terminal-body" id="terminal-body-c">
+              <pre><code><span class="token keyword">#ifndef</span> <span class="token type">GROWING_ENGINEER</span>
+<span class="token keyword">#define</span> <span class="token type">GROWING_ENGINEER</span>
+
+<span class="token class-name">portfolio_t</span> me = {
+  <span class="token string">"Anissh Guruprasad"</span>,
+  <span class="token comment">// Hyperlinked Below!</span>
+  <a id="portfolio-email" class="code-link token string">"anisshachar [at] gmail [dot] com"</a>,
+  <a class="code-link" href="https://www.linkedin.com/in/anissh-guru/" target="_blank" rel="noreferrer"><span class="token string">"linkedin.com/in/anissh-guru/"</span></a>,
+  <a class="code-link" href="https://github.com/ifndef-define" target="_blank" rel="noreferrer"><span class="token string">"github.com/ifndef-define"</span></a>
+};
+
+<span class="token class-name">about_me_t</span> new_engineer = {
+  <a class="code-link" href="https://illinois.edu" target="_blank" rel="noreferrer"><span class="token string">"University of Illinois Urbana-Champaign"</span></a>,
+  <span class="token string">"B.S. in Computer Engineering"</span>,
+  <span class="token string">"Expected Graduation: May 2028"</span>,
+  <span class="token string">"Project-based learning and experience in"</span>
+  <span class="token string">" software development, robotics,"</span>
+  <span class="token string">" embedded systems, and hardware design."</span>,
+};
+
+<span class="token function">printf</span>(<span>to_resume(&me, &new_engineer) + </span><span class="token string">"\n"</span>);
+<span class="token keyword">#endif</span> <span class="token comment">// GROWING_ENGINEER</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Code Output Terminal -->
+          <div class="code-output-container" id="code-output-container">
+            <div class="terminal-output-box">
+              <div class="output-cmd-line">
+                <span class="output-cmd">$ gcc portfolio.c -o resume &amp;&amp; ./resume</span>
+              </div>
+              <div class="output-result" id="output-result-text">&gt; New Engineer defined: Anissh Guruprasad. See output below for more information.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Downstream Content Container -->
+      <div class="downstream-content" id="downstream-content">
+        <!-- Architecture Brief (About) -->
+        <section id="about" class="section">
+          <div class="container">
+            <div class="section-heading">
+              <p class="section-eyebrow">[<span class="eyebrow-addr">0x20 - 0x4F</span> // <span class="eyebrow-title">ARCHITECTURE BRIEF</span>]</p>
+              <h2 class="section-title">About</h2>
+              <p class="section-desc">Engineering at the boundary of hardware, firmware, and computation.</p>
+            </div>
+
+            <div class="system-panel crosshair-card">
+              <p>
+                I'm drawn to engineering problems that cross abstraction layers, from <strong>PCB design and embedded firmware to FPGA logic, software systems</strong>, and the interfaces that connect them. I am someone who strives to <strong>understand how the full system behaves:</strong> how power is delivered, how hardware responds, and how the software ultimately integrates with the physical system.
+              </p>
+              <p>
+                I've <strong>built a portfolio of projects and experiences</strong> across <strong>both hardware and software</strong>, and I'm looking for roles where I can use that breadth to <strong>work across system boundaries</strong>, contribute wherever the problem demands, and <strong>continue growing as an engineer</strong>.
+              </p>
+            </div>
+
+            <!-- Education Subsection -->
+            <div class="education-section">
+              <div class="section-heading">
+                <h3 class="section-title"><span class="comment-prefix">//</span> Education</h3>
+                <p class="section-desc">My academic journey and educational background.</p>
+              </div>
+              <div class="education-list">
+                <!-- Undergrad College Card (Featured Highlight, not feature tagged) -->
+                <article class="project-item crosshair-card is-featured">
+                  <div class="project-topbar">
+                    <div class="project-title-group">
+                      <h3 class="project-name">University of Illinois Urbana-Champaign</h3>
+                    </div>
+                    <div class="project-status-col">
+                      <span class="status-in-progress-text">In Progress<span class="pipe">|</span><span class="on-hold-date">Expected May 2028</span></span>
+                      <div class="live-score-line active blue-live-line" aria-hidden="true"></div>
+                    </div>
+                  </div>
+                  <p class="project-summary">B.S. in Computer Engineering. Coursework and project-based experience in software development, computer systems, FPGA logic design, and signal processing.</p>
+                  <div class="project-tags">
+                    <span class="tag">Computer Engineering</span>
+                    <span class="tag">FPGA</span>
+                    <span class="tag">Data Structures</span>
+                    <span class="tag">Signal Processing</span>
+                    <span class="tag">Robotics</span>
+                    
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects Registry -->
+        <section id="projects" class="section">
+          <div class="container">
+            <div class="section-heading">
+              <p class="section-eyebrow">[<span class="eyebrow-addr">0x50 - 0x8F</span> // <span class="eyebrow-title">SYSTEM REGISTRY</span>]</p>
+              <h2 class="section-title">Projects</h2>
+              <p class="section-desc">Engineered systems, hardware designs, software packages, and much more.<p>
+            </div>
+
+            <div class="projects-list">
+            <article class="project-item crosshair-card is-featured">
+              <div class="project-topbar">
+                <div class="project-title-group">
+                  <h3 class="project-name"><a href="projects/project-fpga.html">Embedded Pac-Man on Xilinx Spartan-7</a></h3>
+                  <span class="project-badge">FEATURED</span>
+                </div>
+                  <div class="project-status-col">
+                    <span class="status-on-hold-text">On Hold<span class="pipe">|</span><span class="on-hold-date">Dec 2025</span></span>
+                    <div class="live-score-line on-hold" aria-hidden="true"></div>
+                  </div>
+              </div>
+              <p class="project-summary">Final project for ECE 385 (Digital Systems Lab) at UIUC. Created a hardware/software co-design using the MicroBlaze soft processor and a custom video rendering pipeline to implement a playable arcade-style Pac-Man game on a Xilinx Spartan-7 FPGA.</p>
+              <div class="project-system-note-minimal note-bad">
+                <span class="note-icon">⚠️</span>
+                <span class="note-text">Unforunately, the Verilog & MicroBlaze source files were corrupted and lost during project demo. Planning to rebuild the project with more robust design principles.</span>
+              </div>
+              <div class="project-tags">
+                <span class="tag">FPGA</span>
+                <span class="tag">MicroBlaze</span>
+                <span class="tag">SystemVerilog</span>
+                <span class="tag">C</span>
+                <span class="tag">VGA</span>
+                <span class="tag">HDMI</span>
+                <span class="tag">AXI4</span>
+                <span class="tag">Vivado 2022</span>
+                <span class="tag">Urbana Board</span>
+              </div>
+              <div class="project-actions">
+                <a href="projects/project-fpga.html" class="system-link">What Happened? <span class="arrow">→</span></a>
+              </div>
+            </article>
+
+            <article class="project-item crosshair-card is-featured">
+              <div class="project-topbar">
+                <div class="project-title-group">
+                  <h3 class="project-name"><a href="projects/project-mcutft.html">RP2350 TFT Display Driver</a></h3>
+                  <span class="project-badge">FEATURED</span>
+                </div>
+                  <div class="project-status-col">
+                    <span class="status-in-progress-text">In Progress</span>
+                    <div class="live-score-line active blue-live-line" aria-hidden="true"></div>
+                  </div>
+              </div>
+              <p class="project-summary">Currently developing custom hardware and software for a TFT display using dual RP2350 microcontrollers, one for driving the display and one for managing the display content and other peripherals. Planned for use in a custom keyboard project, with future applications in robotics and other embedded systems.</p>
+              <div class="project-system-note-minimal note-good">
+                <span class="note-icon">✅</span>
+                <span class="note-text">Currently working on a development board with dual RP2350 MCUs, along with wireless communication.</span>
+              </div>
+              <div class="project-tags">
+                <span class="tag">RP2350</span>
+                <span class="tag">TFT Display</span>
+                <span class="tag">Embedded Systems</span>
+                <span class="tag">C</span>
+                <span class="tag">PCB Design</span>
+                <span class="tag">KiCad</span>
+                <span class="tag">High-Speed Digital Design</span>
+              </div>
+              <div class="project-actions">
+                <a href="projects/project-mcutft.html" class="system-link">See my Progress <span class="arrow">→</span></a>
+              </div>
+            </article>
+
+            <article class="project-item crosshair-card is-featured">
+              <div class="project-topbar">
+                <div class="project-title-group">
+                  <h3 class="project-name"><a href="projects/project-smartgarage.html">ESP32 Smart Garage Door Controller</a></h3>
+                  <span class="project-badge">FEATURED</span>
+                </div>
+                  <div class="project-status-col">
+                    <span class="status-in-progress-text">In Progress</span>
+                    <div class="live-score-line active blue-live-line" aria-hidden="true"></div>
+                  </div>
+              </div>
+              <p class="project-summary">Developing a smart garage door controller using an ESP32 microcontroller, with features such as remote access, status monitoring, and integration as a Matter device with Google Home.</p>
+              <div class="project-system-note-minimal note-good">
+                <span class="note-icon">✅</span>
+                <span class="note-text">The PCB has been designed and fabricated. Currently working on the firmware and Matter integration.</span>
+              </div>
+              <div class="project-tags">
+                <span class="tag">ESP32</span>
+                <span class="tag">IoT</span>
+                <span class="tag">C++</span>
+                <span class="tag">Home Automation</span>
+                <span class="tag">KiCad</span>
+                <span class="tag">PCB Design</span>
+                <span class="tag">Embedded Systems</span>
+              </div>
+              <div class="project-actions">
+                <a href="projects/project-smartgarage.html" class="system-link">See my Progress <span class="arrow">→</span></a>
+              </div>
+            </article>
+
+            <article class="project-item crosshair-card">
+              <div class="project-topbar">
+                <div class="project-title-group">
+                  <h3 class="project-name">PWM Fan Controller PCB</h3>
+                </div>
+                  <div class="project-status-col">
+                    <span class="status-on-hold-text">On Hold<span class="pipe">|</span><span class="on-hold-date">Aug 2026</span></span>
+                    <div class="live-score-line on-hold" aria-hidden="true"></div>
+                  </div>
+              </div>
+              <p class="project-summary">Designed and fabricated a custom PCB for controlling standard 3 and 4-pin PWM fans using a 555 timer and a MOSFET. The PCB is designed to be used in a custom fume hood for my soldering station.</p>
+              <div class="project-system-note-minimal note-good">
+                <span class="note-icon">✅</span>
+                <span class="note-text">The PCB was successfully fabricated and tested. Now working on designing a custom enclosure for the PCB and fans to be used in my soldering station.</span>
+              </div>
+              <div class="project-tags">
+                <span class="tag">KiCad</span>
+                <span class="tag">PCB Design</span>
+                <span class="tag">555 Timer</span>
+              </div>
+            </article>
+
+            <article class="project-item crosshair-card">
+              <div class="project-topbar">
+                <div class="project-title-group">
+                  <h3 class="project-name">VEX TM Utility Library & Steam Integration</h3>
+                </div>
+                  <div class="project-status-col">
+                    <span class="status-on-hold-text">On Hold<span class="pipe">|</span><span class="on-hold-date">June 2026</span></span>
+                    <div class="live-score-line on-hold" aria-hidden="true"></div>
+                  </div>
+              </div>
+              <p class="project-summary">Developing a Python library for VEX TM robotics to abstract the complexity of the VEX Tournament Manager software for other developers and event partners to easily develop custom applications for VEX TM robotics competitions. Additionally, developing a live streaming integration for VEX TM robotics competitions to allow for easier automation of live streaming and event management.</p>
+              <div class="project-system-note-minimal note-note">
+                <span class="note-icon">📋</span>
+                <span class="note-text">API keys have been expired since June. Still awaiting a response from VEX Robotics to renew the API keys and continue development.</span>
+              </div>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">API Development</span>
+                <span class="tag">Live Streaming</span>
+                <span class="tag">OBS</span>
+                <span class="tag">Websockets</span>
+                <span class="tag">Software Development</span>
+              </div>
+            </article>
+
+            <article class="project-item crosshair-card">
+              <div class="project-topbar">
+                <div class="project-title-group">
+                  <h3 class="project-name">RFID Based Attendance System</h3>
+                </div>
+                  <div class="project-status-col">
+                    <span class="status-in-progress-text">In Progress</span>
+                    <div class="live-score-line active blue-live-line" aria-hidden="true"></div>
+                  </div>
+              </div>
+              <p class="project-summary">Developed a custom RFID-based attendance system for a student organization to automate attendance tracking and reporting. The system used a Raspberry Pi and RFID readers to scan RFID tags paired with a custom Discord bot to notify members of their attendance.</p>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Raspberry Pi</span>
+                <span class="tag">MFRC522</span>
+                <span class="tag">RFID</span>
+                <span class="tag">Linux</span>
+                <span class="tag">Discord API</span>
+              </div>
+            </article>
+
+            <article class="project-item crosshair-card">
+              <div class="project-topbar">
+                <div class="project-title-group">
+                  <h3 class="project-name"><a href="projects/project-learnpcb.html">Custom Robotics Interface Board</a></h3>
+                </div>
+                  <div class="project-status-col">
+                    <span class="status-completed-text">April 2026</span>
+                    <div class="live-score-line completed" aria-hidden="true"></div>
+                  </div>
+              </div>
+              <p class="project-summary">Learned how to design custom PCBs using KICad by designing a STM32G474-based custom PCB integrating encoder interfaces, RS485 communication, and power regulation, with Raspberry Pi communication for autonomous robotics applications.</p>
+              <div class="project-system-note-minimal note-note">
+                <span class="note-icon">📋</span>
+                <span class="note-text">This board was only a prototype for learning PCB design and was not used in any robotics applications.</span>
+              </div>
+              <div class="project-tags">
+                <span class="tag">PCB Design</span>
+                <span class="tag">KiCad</span>
+                <span class="tag">STM32G4</span>
+                <span class="tag">Hardware Design</span>
+              </div>
+              <div class="project-actions">
+                <a href="projects/project-learnpcb.html" class="system-link">See Designs <span class="arrow">→</span></a>
+              </div>
+            </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- Experience Section (Logo Placeholders & Google Live Score Green Lines) -->
+        <section id="experience" class="section">
+          <div class="container">
+            <div class="section-heading">
+              <p class="section-eyebrow">[<span class="eyebrow-addr">0x90 - 0xCF</span> // <span class="eyebrow-title">EXPERIENCE</span>]</p>
+              <h2 class="section-title">Experience</h2>
+              <p class="section-desc">Engineering leadership, competitive robotics, and firmware architecture.</p>
+            </div>
+
+            <div class="experience-list">
+            <article class="experience-item crosshair-card is-featured">
+              <div class="exp-header-row">
+                <div class="exp-icon-placeholder" title="Illini VEX Robotics"><img src="assets/block_i.png" alt="Illini VEX Robotics Logo" /></div>
+                <div class="exp-header-content">
+                  <div class="exp-top">
+                    <h3 class="exp-role">Event Partner</h3>
+                    <div class="exp-time is-present">
+                      <span>Dec 2024 - Present</span>
+                      <div class="live-score-line active blue-live-line" aria-hidden="true"></div>
+                    </div>
+                  </div>
+                  <p class="exp-org"><a href="https://illinivexu.web.illinois.edu/" target="_blank" rel="noreferrer">Illini VEX Robotics <span class="arrow arrow-external">↗</span></a></p>
+                </div>
+              </div>
+              <ul class="exp-points">
+                <li>Lead and hosted 6+ regional tournaments with 30+ teams each</li>
+                <li>Coordinated 50+ volunteers across judging, training, and logistics</li>
+                <li>Managed tournament flow, finances, scoring systems, and livestream infrastructure</li>
+              </ul>
+              <div class="project-tags exp-skills">
+                <span class="tag">Event Operations</span>
+                <span class="tag">Volunteer Coordination</span>
+                <span class="tag">Logistics</span>
+                <span class="tag">Financial Management</span>
+                <span class="tag">Livestreaming</span>
+                <span class="tag">Networking</span>
+              </div>
+            </article>
+
+            <article class="experience-item crosshair-card is-featured">
+              <div class="exp-header-row">
+                <div class="exp-icon-placeholder" title="Illini VEX Robotics"><img src="assets/block_i.png" alt="Illini VEX Robotics Logo" /></div>
+                <div class="exp-header-content">
+                  <div class="exp-top">
+                    <h3 class="exp-role">Treasurer</h3>
+                    <div class="exp-time is-present">
+                      <span>Aug 2026 - Present</span>
+                      <div class="live-score-line active blue-live-line" aria-hidden="true"></div>
+                    </div>
+                  </div>
+                  <p class="exp-org"><a href="https://illinivexu.web.illinois.edu/" target="_blank" rel="noreferrer">Illini VEX Robotics <span class="arrow arrow-external">↗</span></a></p>
+                </div>
+              </div>
+              <ul class="exp-points">
+                <li>Spearheading the financial management of a student organization with 100+ members and $10,000+ in annual budget</li>
+                <li>Developing automated financial requests and reporting systems across origination departments</li>
+              </ul>
+              <div class="project-tags exp-skills">
+                <span class="tag">Financial Management</span>
+                <span class="tag">Budgeting</span>
+                <span class="tag">Nonprofit Operations</span>
+              </div>
+            </article>
+
+            <article class="experience-item crosshair-card">
+              <div class="exp-header-row">
+                <div class="exp-icon-placeholder" title="Illini VEX Robotics"><img src="assets/block_i.png" alt="Illini VEX Robotics Logo" /></div>
+                <div class="exp-header-content">
+                  <div class="exp-top">
+                    <h3 class="exp-role">Programming Team Lead</h3>
+                    <div class="exp-time is-past">
+                      <span>Aug 2023 - Dec 2025</span>
+                      <div class="live-score-line completed" aria-hidden="true"></div>
+                    </div>
+                  </div>
+                  <p class="exp-org"><a href="https://illinivexu.web.illinois.edu/" target="_blank" rel="noreferrer">Illini VEX Robotics <span class="arrow arrow-external">↗</span></a></p>
+                </div>
+              </div>
+              <ul class="exp-points">
+                <li>Led software development for 4+ competitive robots and mentored 10+ programmers</li>
+                <li>Developed autonomous navigation using Pure Pursuit, PID, and odometry.</li>
+                <li>Improved autonomous reliability through iterative testing, tuning, and debugging.</li>
+                <li>Collaborated across mechanical and software teams to improve robot integration and prototype mechanisms.</li>
+              </ul>
+              <div class="project-tags exp-skills">
+                <span class="tag">C++</span>
+                <span class="tag">Odometry</span>
+                <span class="tag">PID Control</span>
+                <span class="tag">Path Following</span>
+                <span class="tag">Team Leadership</span>
+              </div>
+            </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- Skills & Tools Section -->
+        <section id="skills" class="section">
+          <div class="container">
+            <div class="section-heading">
+              <p class="section-eyebrow">[<span class="eyebrow-addr">0xD0 - 0xEF</span> // <span class="eyebrow-title">CAPABILITIES</span>]</p>
+              <h2 class="section-title">Skills &amp; Tools</h2>
+              <p class="section-desc">Engineering domains, hardware platforms, and software stacks.</p>
+            </div>
+
+            <div class="skills-list">
+            <div class="skill-group crosshair-card">
+              <span class="skill-category">Software Development</span>
+              <div class="project-tags skill-tags">
+                <span class="tag">C</span>
+                <span class="tag">C++</span>
+                <span class="tag">Python</span>
+                <span class="tag">Java</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">SystemVerilog</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Shell scripting</span>
+                <span class="tag">Git/GitHub Version Control</span>
+              </div>
+            </div>
+
+            <div class="skill-group crosshair-card">
+              <span class="skill-category">Microcontrollers & Processors</span>
+              <div class="project-tags skill-tags">
+                <span class="tag">RP2350</span>
+                <span class="tag">ESP32-C3</span>
+              </div>
+            </div>
+
+            <div class="skill-group crosshair-card">
+              <span class="skill-category">FPGA & HDL</span>
+              <div class="project-tags skill-tags">
+                <span class="tag">Spartan-7 FPGA</span>
+                <span class="tag">Vivado/Vitis HLS</span>
+                <span class="tag">SystemVerilog</span>
+                <span class="tag">MicroBlaze soft processor</span>
+                <span class="tag">AXI interconnect</span>
+                <span class="tag">Testbenche & Simulation</span>
+              </div>
+            </div>
+
+            <div class="skill-group crosshair-card">
+              <span class="skill-category">PCB & Hardware Design</span>
+              <div class="project-tags skill-tags">
+                <span class="tag">KiCad (schematic, layout, routing)</span>
+                <span class="tag">High-speed digital design</span>
+                <span class="tag">Power distribution & decoupling</span>
+                <span class="tag">Keysight Oscilloscope</span>
+              </div>
+            </div>
+
+            <div class="skill-group crosshair-card">
+              <span class="skill-category">Communication Interfaces</span>
+              <div class="project-tags skill-tags">
+                <span class="tag">SPI</span>
+                <span class="tag">QSPI</span>
+                <span class="tag">UART</span>
+                <span class="tag">I2C</span>
+                <span class="tag">RS-485</span>
+                <span class="tag">USB HID</span>
+              </div>
+            </div>
+
+            <div class="skill-group crosshair-card">
+              <span class="skill-category">Robotics & Control Theory</span>
+              <div class="project-tags skill-tags">
+                <span class="tag">Odometry</span>
+                <span class="tag">PID control loops</span>
+                <span class="tag">Pure Pursuit</span>
+                <span class="tag">Path Following</span>
+                <span class="tag">Spline generation</span>
+                <span class="tag">Motion Planning</span>
+              </div>
+            </div>
+
+            <div class="skill-group crosshair-card">
+              <span class="skill-category">Mechanical Design & Fabrication</span>
+              <div class="project-tags skill-tags">
+                <span class="tag">3D Printing (FDM)</span>
+                <span class="tag">Laser Cutting</span>
+                <span class="tag">CNC Milling</span>
+                <span class="tag">CAD (Fusion 360)</span>
+              </div>
+            </div>
+
+            <div class="skill-group crosshair-card">
+              <span class="skill-category">Leadership</span>
+              <div class="project-tags skill-tags">
+                <span class="tag">Team Leadership</span>
+                <span class="tag">Cross-functional Collaboration</span>
+                <span class="tag">Event Operations</span>
+                <span class="tag">Volunteer Coordination</span>
+                <span class="tag">Logistics</span>
+                <span class="tag">Finance Management</span>
+              </div>
+            </div>
+
+            <div class="skill-group crosshair-card">
+              <span class="skill-category">Other Skills</span>
+              <div class="project-tags skill-tags">
+                <span class="tag">Livestreaming</span>
+                <span class="tag">Premiere Pro Video Editing</span>
+                <span class="tag">Desktop PC Building</span>
+              </div>
+            </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Footer / Transmission -->
+        <footer id="contact" class="site-footer">
+          <div class="container footer-inner">
+            <div>
+              <p class="section-eyebrow">[<span class="eyebrow-addr">0xF0 - 0xFF</span> // <span class="eyebrow-title">TRANSMISSION</span>]</p>
+              <h2 class="footer-title">Let's build something thoughtful.</h2>
+              <p class="footer-subtitle">Open for engineering opportunities and technical collaboration.</p>
+              <div class="footer-cta-row">
+                <button type="button" class="button primary-connect" id="connect-button-footer">Let's Connect</button>
+                <span class="footer-cta-divider">or reach out directly</span>
+                <a id="portfolio-email-contact" class="button secondary">Email</a>
+              </div>
+            </div>
+
+            <div class="footer-links-group">
+              <div class="footer-nav">
+                <a href="https://www.linkedin.com/in/anissh-guru/" target="_blank" rel="noreferrer">
+                  <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="2" r="2"/></svg>
+                  <span>LinkedIn</span>
+                  <span class="arrow" aria-hidden="true">↗</span>
+                </a>
+                <a href="https://github.com/ifndef-define" target="_blank" rel="noreferrer">
+                  <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  <span>GitHub</span>
+                  <span class="arrow" aria-hidden="true">↗</span>
+                </a>
+                <a href="https://github.com/ifndef-define/portfolio-website/issues" target="_blank" rel="noreferrer">
+                  <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  <span>Report Issue</span>
+                  <span class="arrow" aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="footer-bottom">
+              <p class="copyright">&copy; <span id="year"></span> Anissh Guruprasad &mdash; <a href="https://github.com/ifndef-define/portfolio-website" target="_blank" rel="noreferrer">Site source code</a></p>
+              <a class="bot-link" href="summary4bot.html">[ai/bot summary]</a>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </main>
+
+    <!-- VS Code Styled Recruiter Contact Modal -->
+    <div class="contact-modal" id="contact-modal" aria-hidden="true">
+      <div class="modal-backdrop" data-close-modal></div>
+      <section class="code-editor" role="dialog" aria-modal="true" aria-label="Recruiter contact form">
+        <div class="editor-titlebar">
+          <div class="editor-traffic-lights">
+            <span class="editor-dot dot-red" data-close-modal title="Close"></span>
+            <span class="editor-dot dot-yellow"></span>
+            <span class="editor-dot dot-green"></span>
+          </div>
+          <span class="editor-filename">recruiter_contact.py</span>
+          <button type="button" class="modal-close" aria-label="Close contact form" data-close-modal>&times;</button>
+        </div>
+        <div class="editor-accessibility" aria-label="Accessibility options">
+          <button type="button" class="accessibility-toggle" id="light-mode-toggle" aria-pressed="false">Use light mode</button>
+          <div class="font-size-control">
+            <select id="font-size-select" aria-label="Editor text size">
+              <option value="normal" selected>Normal</option>
+              <option value="large">Large</option>
+              <option value="very-large">Very large</option>
+            </select>
+          </div>
+        </div>
+        <div class="editor-body">
+          <div class="editor-code">
+            <div class="code-line" id="import-contact-system" title="Triple-click for debug mode"><span class="line-number">1</span><span class="code-text"><span class="token keyword">import</span> <span class="token type">contact_system</span></span></div>
+            <div class="code-line"><span class="line-number">2</span><span class="code-text"></span></div>
+            <div class="code-line"><span class="line-number">3</span><span class="code-text"><span class="token comment"># Recruiter Contact Interface — Sends directly to me</span></span></div>
+            <div class="code-line"><span class="line-number">4</span><span class="code-text"><span class="token comment"># Feel free to use this form, or directly reach out via email</span></span></div>
+            <div class="code-line"><span class="line-number">5</span><span class="code-text"><span class="token keyword">def</span> <span class="token function">recruiter_contact</span>():</span></div>
+            <div class="code-line"><span class="line-number">6</span><span class="code-text indent-4">candidate = <span class="token string">"Anissh Guruprasad"</span></span></div>
+            <div class="code-line"><span class="line-number">7</span><span class="code-text indent-4">recruiter_name = <span class="token string">"<span class="editable-code-region"><input class="inline-code-input recruiter-name" id="recruiter-name" name="recruiterName" type="text" value="&lt;Recruiter Name&gt;" aria-label="Recruiter name" maxlength="50" autocomplete="name" required /></span>"</span></span></div>
+            <div class="code-line"><span class="line-number">8</span><span class="code-text indent-4">recruiter_email = <span class="token string">"<span class="editable-code-region"><input class="inline-code-input recruiter-email" id="recruiter-email" name="recruiterEmail" type="email" value="&lt;recruiter@company.com&gt;" aria-label="Recruiter email" maxlength="60" autocomplete="email" required /></span>"</span></span></div>
+            <div class="code-line"><span class="line-number">9</span><span class="code-text indent-4">reason_for_contact = <span class="token string">"""<span class="editable-code-region multiline-region"><textarea class="inline-code-textarea recruiter-message" id="recruiter-message" name="recruiterMessage" rows="2" aria-label="Reason for reaching out">&lt;Why you are reaching out / role details&gt;</textarea></span>"""</span></span></div>
+            <div class="code-line"><span class="line-number">10</span><span class="code-text"></span></div>
+            <div class="code-line"><span class="line-number">11</span><span class="code-text indent-4"><span class="token function">contact_system.transmit</span>(</span></div>
+            <div class="code-line"><span class="line-number">12</span><span class="code-text indent-4">    to=candidate,</span></div>
+            <div class="code-line"><span class="line-number">13</span><span class="code-text indent-4">    sender=recruiter_name,</span></div>
+            <div class="code-line"><span class="line-number">14</span><span class="code-text indent-4">    email=recruiter_email,</span></div>
+            <div class="code-line"><span class="line-number">15</span><span class="code-text indent-4">    body=reason_for_contact</span></div>
+            <div class="code-line"><span class="line-number">16</span><span class="code-text indent-4">)</span></div>
+            <div class="code-line"><span class="line-number">17</span><span class="code-text"></span></div>
+            <div class="code-line"><span class="line-number">18</span><span class="code-text"><span class="token keyword">if</span> __name__ == <span class="token string">"__main__"</span>:</span></div>
+            <div class="code-line"><span class="line-number">19</span><span class="code-text indent-4"><span class="token function">recruiter_contact</span>()</span></div>
+          </div>
+          <div class="terminal-divider" aria-hidden="true"></div>
+          <form id="contact-form" novalidate>
+            <input type="checkbox" name="botcheck" id="botcheck" class="code-param-opt" tabindex="-1" autocomplete="off" />
+            <div class="terminal-console-bar">
+              <button type="submit" class="send-button">
+                <span class="send-label">Run &gt;</span>
+                <span class="send-loader" aria-hidden="true"></span>
+              </button>
+              <span class="console-cmd">python recruiter_contact.py</span>
+            </div>
+            <p class="email-error" id="email-error" role="alert"></p>
+          </form>
+        </div>
+      </section>
+    </div>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
