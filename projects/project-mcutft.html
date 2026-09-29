@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Embedded Pac-Man on Xilinx Spartan-7 | Anissh Guruprasad</title>
+    <title>RP2350 TFT Display Driver | Anissh Guruprasad</title>
     <meta
       name="description"
-      content="Final project for ECE 385 (Digital Systems Lab) at UIUC. Created a hardware/software co-design using the MicroBlaze soft processor and a custom video rendering pipeline to implement a playable arcade-style Pac-Man game on a Xilinx Spartan-7 FPGA."
+      content="Currently developing custom hardware and software for a TFT display using dual RP2350 microcontrollers, one for driving the display and one for managing the display content and other peripherals. Planned for use in a custom keyboard project, with future applications in robotics and other embedded systems."
     />
     <link rel="icon" type="image/x-icon" href="../assets/AG_Logo.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -44,17 +44,15 @@
         <div class="container">
           <a href="../index.html#projects" class="back-link">← Back to Projects</a>
           <div class="project-detail-header">
-            <h1>Embedded Pac-Man on Xilinx Spartan-7</h1>
+            <h1>RP2350 TFT Display Driver</h1>
             <div class="project-tags">
-              <span class="tag">FPGA</span>
-              <span class="tag">MicroBlaze</span>
-              <span class="tag">SystemVerilog</span>
+              <span class="tag">RP2350</span>
+              <span class="tag">TFT Display</span>
+              <span class="tag">Embedded Systems</span>
               <span class="tag">C</span>
-              <span class="tag">VGA</span>
-              <span class="tag">HDMI</span>
-              <span class="tag">AXI4</span>
-              <span class="tag">Vivado 2022</span>
-              <span class="tag">Urbana Board</span>
+              <span class="tag">PCB Design</span>
+              <span class="tag">KiCad</span>
+              <span class="tag">High-Speed Digital Design</span>
             </div>
           </div>
         </div>
@@ -64,32 +62,48 @@
         <div class="container">
           <div class="project-detail-main">
             <article class="detail-section crosshair-card">
-              <div class="project-system-note-minimal note-bad">
-                <span class="note-icon">⚠</span>
-                <span class="note-text">Unforunately, the Verilog &amp; MicroBlaze source files were corrupted and lost during project demo. Planning to rebuild the project with more robust design principles.</span>
+              <div class="project-system-note-minimal note-good">
+                <span class="note-icon">✓</span>
+                <span class="note-text">Currently working on a development board with dual RP2350 MCUs, along with wireless communication.</span>
               </div>
 
               <div class="detail-subsection">
-                <h2>So What Happened?</h2>
+                <h2>Project Inspiration</h2>
                 <p>
-                  With this project being my flagship project, I want to share the story of what happened and how I lost most of the source code for it.
+                  The funny origin of this project came during my search for internships. My brother suggested that I should apply to Wooting. I thought about it and decided to make my own custom keyboard as a showpiece, but with a twist. I came up with the idea of making a keyboard that would have customizable screens, replacing the function row, and one on the left side of the keyboard as a touchscreen to be used for macros and for controlling the keyboard. I thought this would be a fun project to work on, and it would also be a great way to learn more about electronics and programming.
+                </p>
+                <h3>Initial Design and Research</h3>
+                <p>
+                  Designing the board was simple enough; I wanted to keep a roughly 75% layout, with the function row replaced with a screen, dedicated arrow, media, and navigation keys, and the have the left side screen be a touchscreen. The first problem was I could not find a display that would fit the size of function key row at about 1.5 inches tall and 12 inches wide. Instead, I found a 1.5 inch tall and 3 inch wide display that I could fit three groups of four keys, to match the standard layout of the function row. This brings the total number of displays to four.
+                </p>
+              <figure class="project-figure">
+                  <img src="../assets/keyboard_concept.png" alt="Keyboard Sketch" />
+                  <figcaption>Keyboard Sketch</figcaption>
+              </figure>
+                <p>
+                  In order to drive the screens themselves, I found that I would need to use massive development boards that simply wouldn't fit in the keyboard space, or utilise extremely expensive ASICs that could drive the screens. So after some research, I found that the best solution would be to use a Raspberry Pi RP2350B. This particular MCU has PIO (Programmable Input/Output) blocks that can be used to drive the high-speed RGB and timing signals required for the displays, without running on software. This would free the dual-core ARM Cortex-M0+ to handle running the display using the LVGL (Light and Versatile Graphics Library) on one core, while the other core handles input processing and communication with a the master keyboard MCU, which conveiniently, is also a RP2350B.
                 </p>
                 <p>
-                  The project was going as planned, and I had spent nearly the entire week leading up to the final demo, working non-stop on the project, making significant progress on the glyph table rendering and getting the data from the C code to the FPGA. In order to meet the deadline, I had pulled nearly three back-to-back all nighters to get the project to a demoable, bug-free state.
+                  This master-satellite architecture would allow for the displays to be driven by a dedicated MCU, while the master MCU handles the keyboard input, communication with the computer, and directs the 4 displays via a state machine of some sort.
+                </p>
+                <h3>So where to start?</h3>
+                <p>
+                  Now this is an ambitious project for me as this would be my first high-speed digital design, and I have never worked with TFT displays before, ontop of designing the necessary MCU and supporting circuitry to house the microcontrollers. So I decided to start with the displays themselves, as this is a fundemental part of the project.
                 </p>
                 <p>
-                  Since I had to switch between my desktop and my laptop, and since Vivado stores the IP modules of a project as a shared resource, I had modified the save path for all of my project to be in one folder, including the IP modules, the verilog files, and the Vitis source code. Being extremely exhausted, I believe I accidentally moved the entire project folder onto my laptop instead of copying it from my PC without realizing it.
+                  In order to be able to create the firmware for the RP2350B that would drive the displays, I would need to first build a development test board that would allow me to test the PIO blocks and the master to satellite communication. I would also need to be able to test the displays themselves, and make sure that they are able to output the correct graphics with no tearing, flickering, or other artifacts.
                 </p>
-                <h3>My Grave Mistake</h3>
+                <h3>What I have designed so far</h3>
                 <p>
-                  Now there was one small render issue I knew about that I didn't have time to synthesize and test before the demo, which was related to the startup screen graphics. I ended up having to demo the project without it which had no value to the demo, but was something I wanted to fix later. After the demo, I went to work on fixing the issue before heading home. Here I made the fatal mistake of not backing up the project before I started deleting large portions of the project to just run the loading screen graphics to test my fix. I ended up seeing it working, and I was happy with the result, so I thought to make the same change to the copy I thought I still had on my desktop. However, upon checking my desktop, I realized that the project folder was no longer there, and I had accidentally moved it to my laptop, where I had just virtually deleted the entire project.
+                  I am currently working on designing the test board, which will be a small PCB that will house two RP2350B MCUs, and the necessary circuitry to drive the displays, a RP-RM2 module, independent USB-C per MCU, redundant serial wire debugging, and many test points to be able to probe the signals and make sure that everything is working correctly.
                 </p>
-                <h3>My Lesson Learned</h3>
+              <figure class="project-figure">
+                  <img src="../assets/mcu_tft_schematic.png" alt="Test Board In-Progress Schematic" />
+                  <figcaption>Test Board In-Progress Schematic</figcaption>
+              </figure>
+                <h3>What&#x27;s next?</h3>
                 <p>
-                  I learned one of the most important lessons in software development, which is to always back up your work and have some form of version control. I had been working on this project for months, and I had lost nearly all of my source code due to a simple oversight while being extremely exhausted. I attempted to recover the project and rebuilt it, but I relized I would have to virtualize start from scratch. I put it off for a while, and haven't had the time to rebuild it since, working on other projects instead.
-                </p>
-                <p>
-                  I do plan to rebuild this project in the near future, while making it better than before, and I will be sure to back up my work this time.
+                  The primary goal is to get this test board designed, fabricated, and assembled in the next month or so, and then start working on developing the firmware for the RP2350B MCUs to drive the displays and communicate with each other. This I anticipate will take another month or so, as I will need to learn how to actually use the PIO blocks, drive the displays, and implement a custom driver to go from the rendered framebuffer to the PIO blocks, and then to the displays themselves.
                 </p>
               </div>
             </article>

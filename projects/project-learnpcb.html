@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Embedded Pac-Man on Xilinx Spartan-7 | Anissh Guruprasad</title>
+    <title>Custom Robotics Interface Board | Anissh Guruprasad</title>
     <meta
       name="description"
-      content="Final project for ECE 385 (Digital Systems Lab) at UIUC. Created a hardware/software co-design using the MicroBlaze soft processor and a custom video rendering pipeline to implement a playable arcade-style Pac-Man game on a Xilinx Spartan-7 FPGA."
+      content="Learned how to design custom PCBs using KICad by designing a STM32G474-based custom PCB integrating encoder interfaces, RS485 communication, and power regulation, with Raspberry Pi communication for autonomous robotics applications."
     />
     <link rel="icon" type="image/x-icon" href="../assets/AG_Logo.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -44,17 +44,12 @@
         <div class="container">
           <a href="../index.html#projects" class="back-link">← Back to Projects</a>
           <div class="project-detail-header">
-            <h1>Embedded Pac-Man on Xilinx Spartan-7</h1>
+            <h1>Custom Robotics Interface Board</h1>
             <div class="project-tags">
-              <span class="tag">FPGA</span>
-              <span class="tag">MicroBlaze</span>
-              <span class="tag">SystemVerilog</span>
-              <span class="tag">C</span>
-              <span class="tag">VGA</span>
-              <span class="tag">HDMI</span>
-              <span class="tag">AXI4</span>
-              <span class="tag">Vivado 2022</span>
-              <span class="tag">Urbana Board</span>
+              <span class="tag">PCB Design</span>
+              <span class="tag">KiCad</span>
+              <span class="tag">STM32G4</span>
+              <span class="tag">Hardware Design</span>
             </div>
           </div>
         </div>
@@ -64,32 +59,36 @@
         <div class="container">
           <div class="project-detail-main">
             <article class="detail-section crosshair-card">
-              <div class="project-system-note-minimal note-bad">
-                <span class="note-icon">⚠</span>
-                <span class="note-text">Unforunately, the Verilog &amp; MicroBlaze source files were corrupted and lost during project demo. Planning to rebuild the project with more robust design principles.</span>
+              <div class="project-system-note-minimal note-note">
+                <span class="note-icon">ℹ</span>
+                <span class="note-text">This board was only a prototype for learning PCB design and was not used in any robotics applications.</span>
               </div>
 
               <div class="detail-subsection">
-                <h2>So What Happened?</h2>
+                <h2>Learning PCB Design</h2>
                 <p>
-                  With this project being my flagship project, I want to share the story of what happened and how I lost most of the source code for it.
+                  What better way to learn PCB design than to make a PCB? Without knowing what I was doing, I decided to make a PCB for a possible robotics project I had in mind. I wanted to make a PCB that would be able to interface with the through-bore REV Robotics quadrature encoders, and be able to send the encoder data on request to the VEX V5 Brain via the RS-485 serial protocol, along with a 9-axis IMU. This would be in the form factor to be used as a Raspberry Pi HAT, which would allow me to use the Raspberry Pi as a controller for the VEX robot.
                 </p>
                 <p>
-                  The project was going as planned, and I had spent nearly the entire week leading up to the final demo, working non-stop on the project, making significant progress on the glyph table rendering and getting the data from the C code to the FPGA. In order to meet the deadline, I had pulled nearly three back-to-back all nighters to get the project to a demoable, bug-free state.
+                  Obviously, I had no idea what I was doing, and I had never designed a PCB before. So I decided to start with a simple design, and work my way up to more complex designs. I started by designing a simple PCB that would be able to interface with the REV Robotics quadrature encoders, and send the encoder data to the VEX V5 Brain via the RS-485 serial protocol. However, I needed an MCU for this, and settled on the STM32G474 series. This particular MCU has built in hardware timers that would've allowed me to read the quadrature encoder data signals directly, and process the IMU data, and send it to the VEX V5 Brain.
                 </p>
+              <figure class="project-figure">
+                  <img src="../assets/learnpcb_schem.png" alt="Learning PCB Schematic" />
+                  <figcaption>Learning PCB Schematic</figcaption>
+              </figure>
                 <p>
-                  Since I had to switch between my desktop and my laptop, and since Vivado stores the IP modules of a project as a shared resource, I had modified the save path for all of my project to be in one folder, including the IP modules, the verilog files, and the Vitis source code. Being extremely exhausted, I believe I accidentally moved the entire project folder onto my laptop instead of copying it from my PC without realizing it.
+                  After designing the schematic, I learned about how to place and route components on a PCB, and how to make sure that the traces are routed correctly, including proper trace width, trace spacing, and via sizes, as well as properly routing differential pairs, and making sure that the traces are routed in a way that minimizes noise and interference. I learned to design for manufacturability, and how to make sure that the PCB can be manufactured easily.
                 </p>
-                <h3>My Grave Mistake</h3>
+              <figure class="project-figure">
+                  <img src="../assets/learnpcb_layout.png" alt="Learning PCB Layout" />
+                  <figcaption>Learning PCB Layout</figcaption>
+              </figure>
+              <figure class="project-figure">
+                  <img src="../assets/learnpcb_render.png" alt="Learning PCB Render" />
+                  <figcaption>Learning PCB Render</figcaption>
+              </figure>
                 <p>
-                  Now there was one small render issue I knew about that I didn't have time to synthesize and test before the demo, which was related to the startup screen graphics. I ended up having to demo the project without it which had no value to the demo, but was something I wanted to fix later. After the demo, I went to work on fixing the issue before heading home. Here I made the fatal mistake of not backing up the project before I started deleting large portions of the project to just run the loading screen graphics to test my fix. I ended up seeing it working, and I was happy with the result, so I thought to make the same change to the copy I thought I still had on my desktop. However, upon checking my desktop, I realized that the project folder was no longer there, and I had accidentally moved it to my laptop, where I had just virtually deleted the entire project.
-                </p>
-                <h3>My Lesson Learned</h3>
-                <p>
-                  I learned one of the most important lessons in software development, which is to always back up your work and have some form of version control. I had been working on this project for months, and I had lost nearly all of my source code due to a simple oversight while being extremely exhausted. I attempted to recover the project and rebuilt it, but I relized I would have to virtualize start from scratch. I put it off for a while, and haven't had the time to rebuild it since, working on other projects instead.
-                </p>
-                <p>
-                  I do plan to rebuild this project in the near future, while making it better than before, and I will be sure to back up my work this time.
+                  All together, this was a great learning experience for me, and I learned a lot about PCB design, and how to make sure that the PCB is designed correctly, and can be manufactured easily. While this PCB was never manufactured and still has many glaring issues, I learned a lot about PCB design, and have already gotten newer designs manufactured. I may revisit this design in the future, and make a new version of it for the VEX AI competition.
                 </p>
               </div>
             </article>

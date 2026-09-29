@@ -81,7 +81,13 @@
                 "PCB Design",
                 "Embedded Systems"
             ],
-            "links": []
+            "links": [
+                {
+                    "text": "See my Progress",
+                    "page": "projects/project-smartgarage.html",
+                    "url": ""
+                }
+            ]
         },
         {
             "title": "PWM Fan Controller PCB",
