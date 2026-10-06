@@ -22,7 +22,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
       name="description"
       content="{meta_description}"
     />
-    <link rel="icon" type="image/x-icon" href="../assets/AG_Logo.ico" />
+    <link rel="icon" type="image/x-icon" href="../assets/AG_logo.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
